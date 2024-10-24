@@ -1,0 +1,2776 @@
+// Script File Name : nvram.txt
+// Created on 10/23/24 at 10:36:10    
+// AMISCE Utility. Ver 5.05.01.0002
+// Copyright (c) 2021 AMI. All rights reserved.
+HIICrc32= D9D6BCE
+
+Setup Question	= Combo CBS
+Help String	= No help string
+Token	=06	// Do NOT change this line
+Offset	=20
+Width	=01
+Value	=1
+
+Setup Question	= RedirectForReturnDis
+Help String	= From a workaround for GCC/C000005 issue for XV Core on CZ A0, setting MSRC001_1029 Decode Configuration (DE_CFG) bit 14 [DecfgNoRdrctForReturns] to 1
+Token	=07	// Do NOT change this line
+Offset	=21
+Width	=01
+Options	=*[FF]Auto	// Move "*" to the desired Option
+         [01]1
+         [00]0
+
+Setup Question	= L2 TLB Associativity
+Help String	= 0 - L2 TLB ways [11:8] are fully associative.  1 - =L2 TLB ways [11:8] are 4K-only.
+Token	=08	// Do NOT change this line
+Offset	=22
+Width	=01
+Options	=[00]0	// Move "*" to the desired Option
+         [01]1
+         *[03]Auto
+
+Setup Question	= Platform First Error Handling
+Help String	= Enable/disable PFEH, cloak individual banks, and mask deferred error interrupts from each bank.
+Token	=09	// Do NOT change this line
+Offset	=23
+Width	=01
+Options	=[00]Enable	// Move "*" to the desired Option
+         [01]Disable
+         *[03]Auto
+
+Setup Question	= Core Performance Boost
+Help String	= Disable CPB
+Token	=0A	// Do NOT change this line
+Offset	=24
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         *[01]Auto
+
+Setup Question	= Global C-state Control
+Help String	= Controls IO based C-state generation and DF C-states.
+Token	=0B	// Do NOT change this line
+Offset	=25
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled
+         [03]Auto
+
+Setup Question	= OC Mode
+Help String	= No help string
+Token	=7007	// Do NOT change this line
+Offset	=26
+Width	=01
+Options	=*[00]Normal Operation	// Move "*" to the desired Option
+         [01]OC1
+         [05]Customized
+
+Setup Question	= Streaming Stores Control
+Help String	= Enables or disables the streaming stores functionality
+Token	=0E	// Do NOT change this line
+Offset	=27
+Width	=01
+Options	=[01]Disabled	// Move "*" to the desired Option
+         [00]Enabled
+         *[FF]Auto
+
+Setup Question	= Enable IBS
+Help String	= When IBS is enabled, SpecLockMap and Stack Engine are disabled.
+Token	=0F	// Do NOT change this line
+Offset	=28
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled
+         *[03]Auto
+
+Setup Question	= Custom Pstate0
+Help String	= Disable - disable this Pstate  Custom - customize this Pstate, applicable only if PcdOcDisable=FALSE    WARNING - DAMAGE CAUSED BY USE OF YOUR AMD PROCESSOR OUTSIDE OF SPECIFICATION OR IN EXCESS OF FACTORY SETTINGS ARE NOT COVERED UNDER YOUR AMD PRODUCT WARRANTY AND MAY NOT BE COVERED BY YOUR SYSTEM MANUFACTURER'S WARRANTY.  Operating your AMD processor outside of specification or in excess of factory settings, including but not limited to overclocking, may damage or shorten the life of your processor or other system components, create system instabilities (e.g., data loss and corrupted images) and in extreme cases may result in total system failure. AMD does not provide support or service for issues or damages related to use of an AMD processor outside of processor specifications or in excess of factory settings.  
+Token	=700C	// Do NOT change this line
+Offset	=2B
+Width	=01
+Options	=[01]Custom	// Move "*" to the desired Option
+         *[02]Auto
+
+Setup Question	= Frequency (MHz)
+Help String	= Current core frequency in MHz
+Token	=12	// Do NOT change this line
+Offset	=2C
+Width	=04
+Value	=<0>
+
+Setup Question	= Voltage (uV)
+Help String	= Voltage in uV (1V = 1000 * 1000 uV)
+Token	=13	// Do NOT change this line
+Offset	=30
+Width	=04
+Value	=<0>
+
+Setup Question	= Pstate0 FID
+Help String	= Specifies the core frequency multiplier. COF = 200MHz * FID / DID
+Token	=700D	// Do NOT change this line
+Offset	=34
+Width	=01
+Value	=10
+
+Setup Question	= Pstate0 DID
+Help String	= Specifies the core frequency divisor (DID[0] should zero if DID[5:0]>1Ah).
+Token	=700E	// Do NOT change this line
+Offset	=35
+Width	=01
+Value	=8
+
+Setup Question	= Pstate0 VID
+Help String	= Specifies the core voltage.
+Token	=700F	// Do NOT change this line
+Offset	=36
+Width	=01
+Value	=FF
+
+Setup Question	= Custom Pstate1
+Help String	= Disabled - disable this Pstate  Custom - customize this Pstate, applicable only if PcdOcDisable=FALSE    WARNING - DAMAGE CAUSED BY USE OF YOUR AMD PROCESSOR OUTSIDE OF SPECIFICATION OR IN EXCESS OF FACTORY SETTINGS ARE NOT COVERED UNDER YOUR AMD PRODUCT WARRANTY AND MAY NOT BE COVERED BY YOUR SYSTEM MANUFACTURER'S WARRANTY.  Operating your AMD processor outside of specification or in excess of factory settings, including but not limited to overclocking, may damage or shorten the life of your processor or other system components, create system instabilities (e.g., data loss and corrupted images) and in extreme cases may result in total system failure. AMD does not provide support or service for issues or damages related to use of an AMD processor outside of processor specifications or in excess of factory settings.  
+Token	=7010	// Do NOT change this line
+Offset	=37
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         [01]Custom
+         *[02]Auto
+
+Setup Question	= Frequency (MHz)
+Help String	= Current core frequency in MHz
+Token	=14	// Do NOT change this line
+Offset	=38
+Width	=04
+Value	=<0>
+
+Setup Question	= Voltage (uV)
+Help String	= Voltage in uV (1V = 1000 * 1000 uV)
+Token	=15	// Do NOT change this line
+Offset	=3C
+Width	=04
+Value	=<0>
+
+Setup Question	= Pstate1 FID
+Help String	= Specifies the core frequency multiplier. COF = 200MHz * FID / DID
+Token	=7011	// Do NOT change this line
+Offset	=40
+Width	=01
+Value	=10
+
+Setup Question	= Pstate1 DID
+Help String	= Specifies the core frequency divisor (DID[0] should zero if DID[5:0]>1Ah).
+Token	=7012	// Do NOT change this line
+Offset	=41
+Width	=01
+Value	=8
+
+Setup Question	= Pstate1 VID
+Help String	= Specifies the core voltage.
+Token	=7013	// Do NOT change this line
+Offset	=42
+Width	=01
+Value	=FF
+
+Setup Question	= Custom Pstate2
+Help String	= Disabled - disable this Pstate  Custom - customize this Pstate, applicable only if PcdOcDisable=FALSE    WARNING - DAMAGE CAUSED BY USE OF YOUR AMD PROCESSOR OUTSIDE OF SPECIFICATION OR IN EXCESS OF FACTORY SETTINGS ARE NOT COVERED UNDER YOUR AMD PRODUCT WARRANTY AND MAY NOT BE COVERED BY YOUR SYSTEM MANUFACTURER'S WARRANTY.  Operating your AMD processor outside of specification or in excess of factory settings, including but not limited to overclocking, may damage or shorten the life of your processor or other system components, create system instabilities (e.g., data loss and corrupted images) and in extreme cases may result in total system failure. AMD does not provide support or service for issues or damages related to use of an AMD processor outside of processor specifications or in excess of factory settings.  
+Token	=7014	// Do NOT change this line
+Offset	=43
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         [01]Custom
+         *[02]Auto
+
+Setup Question	= Frequency (MHz)
+Help String	= Current core frequency in MHz
+Token	=16	// Do NOT change this line
+Offset	=44
+Width	=04
+Value	=<0>
+
+Setup Question	= Voltage (uV)
+Help String	= Voltage in uV (1V = 1000 * 1000 uV)
+Token	=17	// Do NOT change this line
+Offset	=48
+Width	=04
+Value	=<0>
+
+Setup Question	= Pstate2 FID
+Help String	= Specifies the core frequency multiplier. COF = 200MHz * FID / DID
+Token	=7015	// Do NOT change this line
+Offset	=4C
+Width	=01
+Value	=10
+
+Setup Question	= Pstate2 DID
+Help String	= Specifies the core frequency divisor (DID[0] should zero if DID[5:0]>1Ah).
+Token	=7016	// Do NOT change this line
+Offset	=4D
+Width	=01
+Value	=8
+
+Setup Question	= Pstate2 VID
+Help String	= Specifies the core voltage.
+Token	=7017	// Do NOT change this line
+Offset	=4E
+Width	=01
+Value	=FF
+
+Setup Question	= Custom Pstate3
+Help String	= Disabled - disable this Pstate  Custom - customize this Pstate, applicable only if PcdOcDisable=FALSE    WARNING - DAMAGE CAUSED BY USE OF YOUR AMD PROCESSOR OUTSIDE OF SPECIFICATION OR IN EXCESS OF FACTORY SETTINGS ARE NOT COVERED UNDER YOUR AMD PRODUCT WARRANTY AND MAY NOT BE COVERED BY YOUR SYSTEM MANUFACTURER'S WARRANTY.  Operating your AMD processor outside of specification or in excess of factory settings, including but not limited to overclocking, may damage or shorten the life of your processor or other system components, create system instabilities (e.g., data loss and corrupted images) and in extreme cases may result in total system failure. AMD does not provide support or service for issues or damages related to use of an AMD processor outside of processor specifications or in excess of factory settings.  
+Token	=7018	// Do NOT change this line
+Offset	=4F
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         [01]Custom
+         *[02]Auto
+
+Setup Question	= Frequency (MHz)
+Help String	= Current core frequency in MHz
+Token	=18	// Do NOT change this line
+Offset	=50
+Width	=04
+Value	=<0>
+
+Setup Question	= Voltage (uV)
+Help String	= Voltage in uV (1V = 1000 * 1000 uV)
+Token	=19	// Do NOT change this line
+Offset	=54
+Width	=04
+Value	=<0>
+
+Setup Question	= Pstate3 FID
+Help String	= Specifies the core frequency multiplier. COF = 200MHz * FID / DID
+Token	=7019	// Do NOT change this line
+Offset	=58
+Width	=01
+Value	=10
+
+Setup Question	= Pstate3 DID
+Help String	= Specifies the core frequency divisor (DID[0] should zero if DID[5:0]>1Ah).
+Token	=701A	// Do NOT change this line
+Offset	=59
+Width	=01
+Value	=8
+
+Setup Question	= Pstate3 VID
+Help String	= Specifies the core voltage.
+Token	=701B	// Do NOT change this line
+Offset	=5A
+Width	=01
+Value	=FF
+
+Setup Question	= Custom Pstate4
+Help String	= Disabled - disable this Pstate  Custom - customize this Pstate, applicable only if PcdOcDisable=FALSE    WARNING - DAMAGE CAUSED BY USE OF YOUR AMD PROCESSOR OUTSIDE OF SPECIFICATION OR IN EXCESS OF FACTORY SETTINGS ARE NOT COVERED UNDER YOUR AMD PRODUCT WARRANTY AND MAY NOT BE COVERED BY YOUR SYSTEM MANUFACTURER'S WARRANTY.  Operating your AMD processor outside of specification or in excess of factory settings, including but not limited to overclocking, may damage or shorten the life of your processor or other system components, create system instabilities (e.g., data loss and corrupted images) and in extreme cases may result in total system failure. AMD does not provide support or service for issues or damages related to use of an AMD processor outside of processor specifications or in excess of factory settings.  
+Token	=701C	// Do NOT change this line
+Offset	=5B
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         [01]Custom
+         *[02]Auto
+
+Setup Question	= Frequency (MHz)
+Help String	= Current core frequency in MHz
+Token	=1A	// Do NOT change this line
+Offset	=5C
+Width	=04
+Value	=<0>
+
+Setup Question	= Voltage (uV)
+Help String	= Voltage in uV (1V = 1000 * 1000 uV)
+Token	=1B	// Do NOT change this line
+Offset	=60
+Width	=04
+Value	=<0>
+
+Setup Question	= Pstate4 FID
+Help String	= Specifies the core frequency multiplier. COF = 200MHz * FID / DID
+Token	=701D	// Do NOT change this line
+Offset	=64
+Width	=01
+Value	=10
+
+Setup Question	= Pstate4 DID
+Help String	= Specifies the core frequency divisor (DID[0] should zero if DID[5:0]>1Ah).
+Token	=701E	// Do NOT change this line
+Offset	=65
+Width	=01
+Value	=8
+
+Setup Question	= Pstate4 VID
+Help String	= Specifies the core voltage.
+Token	=701F	// Do NOT change this line
+Offset	=66
+Width	=01
+Value	=FF
+
+Setup Question	= Custom Pstate5
+Help String	= Disabled - disable this Pstate  Custom - customize this Pstate, applicable only if PcdOcDisable=FALSE    WARNING - DAMAGE CAUSED BY USE OF YOUR AMD PROCESSOR OUTSIDE OF SPECIFICATION OR IN EXCESS OF FACTORY SETTINGS ARE NOT COVERED UNDER YOUR AMD PRODUCT WARRANTY AND MAY NOT BE COVERED BY YOUR SYSTEM MANUFACTURER'S WARRANTY.  Operating your AMD processor outside of specification or in excess of factory settings, including but not limited to overclocking, may damage or shorten the life of your processor or other system components, create system instabilities (e.g., data loss and corrupted images) and in extreme cases may result in total system failure. AMD does not provide support or service for issues or damages related to use of an AMD processor outside of processor specifications or in excess of factory settings.  
+Token	=7020	// Do NOT change this line
+Offset	=67
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         [01]Custom
+         *[02]Auto
+
+Setup Question	= Frequency (MHz)
+Help String	= Current core frequency in MHz
+Token	=1C	// Do NOT change this line
+Offset	=68
+Width	=04
+Value	=<0>
+
+Setup Question	= Voltage (uV)
+Help String	= Voltage in uV (1V = 1000 * 1000 uV)
+Token	=1D	// Do NOT change this line
+Offset	=6C
+Width	=04
+Value	=<0>
+
+Setup Question	= Pstate5 FID
+Help String	= Specifies the core frequency multiplier. COF = 200MHz * FID / DID
+Token	=7021	// Do NOT change this line
+Offset	=70
+Width	=01
+Value	=10
+
+Setup Question	= Pstate5 DID
+Help String	= Specifies the core frequency divisor (DID[0] should zero if DID[5:0]>1Ah).
+Token	=7022	// Do NOT change this line
+Offset	=71
+Width	=01
+Value	=8
+
+Setup Question	= Pstate5 VID
+Help String	= Specifies the core voltage.
+Token	=7023	// Do NOT change this line
+Offset	=72
+Width	=01
+Value	=FF
+
+Setup Question	= Custom Pstate6
+Help String	= Disabled - disable this Pstate  Custom - customize this Pstate, applicable only if PcdOcDisable=FALSE    WARNING - DAMAGE CAUSED BY USE OF YOUR AMD PROCESSOR OUTSIDE OF SPECIFICATION OR IN EXCESS OF FACTORY SETTINGS ARE NOT COVERED UNDER YOUR AMD PRODUCT WARRANTY AND MAY NOT BE COVERED BY YOUR SYSTEM MANUFACTURER'S WARRANTY.  Operating your AMD processor outside of specification or in excess of factory settings, including but not limited to overclocking, may damage or shorten the life of your processor or other system components, create system instabilities (e.g., data loss and corrupted images) and in extreme cases may result in total system failure. AMD does not provide support or service for issues or damages related to use of an AMD processor outside of processor specifications or in excess of factory settings.  
+Token	=7024	// Do NOT change this line
+Offset	=73
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         [01]Custom
+         *[02]Auto
+
+Setup Question	= Frequency (MHz)
+Help String	= Current core frequency in MHz
+Token	=1E	// Do NOT change this line
+Offset	=74
+Width	=04
+Value	=<0>
+
+Setup Question	= Voltage (uV)
+Help String	= Voltage in uV (1V = 1000 * 1000 uV)
+Token	=1F	// Do NOT change this line
+Offset	=78
+Width	=04
+Value	=<0>
+
+Setup Question	= Pstate6 FID
+Help String	= Specifies the core frequency multiplier. COF = 200MHz * FID / DID
+Token	=7025	// Do NOT change this line
+Offset	=7C
+Width	=01
+Value	=10
+
+Setup Question	= Pstate6 DID
+Help String	= Specifies the core frequency divisor (DID[0] should zero if DID[5:0]>1Ah).
+Token	=7026	// Do NOT change this line
+Offset	=7D
+Width	=01
+Value	=8
+
+Setup Question	= Pstate6 VID
+Help String	= Specifies the core voltage.
+Token	=7027	// Do NOT change this line
+Offset	=7E
+Width	=01
+Value	=FF
+
+Setup Question	= Custom Pstate7
+Help String	= Disabled - disable this Pstate  Custom - customize this Pstate, applicable only if PcdOcDisable=FALSE    WARNING - DAMAGE CAUSED BY USE OF YOUR AMD PROCESSOR OUTSIDE OF SPECIFICATION OR IN EXCESS OF FACTORY SETTINGS ARE NOT COVERED UNDER YOUR AMD PRODUCT WARRANTY AND MAY NOT BE COVERED BY YOUR SYSTEM MANUFACTURER'S WARRANTY.  Operating your AMD processor outside of specification or in excess of factory settings, including but not limited to overclocking, may damage or shorten the life of your processor or other system components, create system instabilities (e.g., data loss and corrupted images) and in extreme cases may result in total system failure. AMD does not provide support or service for issues or damages related to use of an AMD processor outside of processor specifications or in excess of factory settings.  
+Token	=7028	// Do NOT change this line
+Offset	=7F
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         [01]Custom
+         *[02]Auto
+
+Setup Question	= Frequency (MHz)
+Help String	= Current core frequency in MHz
+Token	=20	// Do NOT change this line
+Offset	=80
+Width	=04
+Value	=<0>
+
+Setup Question	= Voltage (uV)
+Help String	= Voltage in uV (1V = 1000 * 1000 uV)
+Token	=21	// Do NOT change this line
+Offset	=84
+Width	=04
+Value	=<0>
+
+Setup Question	= Pstate7 FID
+Help String	= Specifies the core frequency multiplier. COF = 200MHz * FID / DID
+Token	=7029	// Do NOT change this line
+Offset	=88
+Width	=01
+Value	=10
+
+Setup Question	= Pstate7 DID
+Help String	= Specifies the core frequency divisor (DID[0] should zero if DID[5:0]>1Ah).
+Token	=702A	// Do NOT change this line
+Offset	=89
+Width	=01
+Value	=8
+
+Setup Question	= Pstate7 VID
+Help String	= Specifies the core voltage.
+Token	=702B	// Do NOT change this line
+Offset	=8A
+Width	=01
+Value	=FF
+
+Setup Question	= Relaxed EDC throttling
+Help String	= Disabled - Part-specific EDC throttling protection enabled  Enabled - Reduce the amount of time the processor will throttle  Auto - AMD's recommendation (Disabled)  
+Token	=702C	// Do NOT change this line
+Offset	=8B
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled
+         *[03]Auto
+
+Setup Question	= Downcore control
+Help String	= Sets the number of cores to be used. Once this option has been used to remove any cores, a POWER CYCLE is required in order for future selections to take effect.  NOTE: Need to set 'CBS -> FCH Common Options -> System Control -> Toggle All PwrGood On Cf9' as disabled.
+Token	=24	// Do NOT change this line
+Offset	=8D
+Width	=01
+Options	=[01]ONE	// Move "*" to the desired Option
+         [03]TWO
+         [04]THREE
+         *[00]Auto
+
+Setup Question	= SMTEN
+Help String	= Can be used to disable symmetric multithreading. To re-enable SMT, a POWER CYCLE is needed after selecting the 'Auto' option.  WARNING - S3 is NOT SUPPORTED on systems where SMT is disabled.  NOTE: Need to set 'CBS -> FCH Common Options -> System Control -> Toggle All PwrGood On Cf9' as disabled.
+Token	=25	// Do NOT change this line
+Offset	=8E
+Width	=01
+Options	=[00]Disable	// Move "*" to the desired Option
+         *[01]Auto
+
+Setup Question	= DRAM scrub time
+Help String	= Provide a value that is the number of hours to scrub memory.
+Token	=26	// Do NOT change this line
+Offset	=8F
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         [01]1 hour
+         [04]4 hours
+         [08]8 hours
+         [10]16 hours
+         [18]24 hours
+         [30]48 hours
+         *[FF]Auto
+
+Setup Question	= Redirect scrubber control
+Help String	= Control DF::RedirScrubCtrl[EnRedirScrub]
+Token	=27	// Do NOT change this line
+Offset	=90
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled
+         *[03]Auto
+
+Setup Question	= Disable DF sync flood propagation
+Help String	= Control DF::PIEConfig[DisSyncFloodProp]
+Token	=28	// Do NOT change this line
+Offset	=91
+Width	=01
+Options	=[00]Sync flood disabled	// Move "*" to the desired Option
+         [01]Sync flood enabled
+         *[03]Auto
+
+Setup Question	= GMI encryption control
+Help String	= Control GMI link encryption
+Token	=29	// Do NOT change this line
+Offset	=92
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled
+         *[03]Auto
+
+Setup Question	= xGMI encryption control
+Help String	= Control xGMI link encryption
+Token	=2A	// Do NOT change this line
+Offset	=93
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled
+         *[03]Auto
+
+Setup Question	= CC6 memory region encryption
+Help String	= Control whether or not the CC6 save/restore memory is encrypted
+Token	=2B	// Do NOT change this line
+Offset	=94
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled
+         *[03]Auto
+
+Setup Question	= Location of private memory regions
+Help String	= Controls whether or not the private memory regions (PSP, SMU and CC6) are at the top of DRAM or distributed. Note that distributed requires memory on all dies. Note that it will always be at the top of DRAM if some dies don't have memory regardless of this option's setting.
+Token	=2C	// Do NOT change this line
+Offset	=95
+Width	=01
+Options	=[00]Distributed	// Move "*" to the desired Option
+         [01]Consolidated
+         *[03]Auto
+
+Setup Question	= System probe filter
+Help String	= Controls whether or not the probe filter is enabled. Has no effect on parts where the probe filter is fuse disabled.
+Token	=2D	// Do NOT change this line
+Offset	=96
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled
+         *[03]Auto
+
+Setup Question	= Memory interleaving
+Help String	= Controls fabric level memory interleaving (AUTO, none, channel, die, socket). Note that channel, die, and socket has requirements on memory populations and it will be ignored if the memory doesn't support the selected option.
+Token	=2E	// Do NOT change this line
+Offset	=97
+Width	=01
+Options	=[00]None	// Move "*" to the desired Option
+         [01]Channel
+         [02]Die
+         [03]Socket
+         *[07]Auto
+
+Setup Question	= Memory interleaving size
+Help String	= Controls the memory interleaving size. The valid values are AUTO, 256 bytes, 512 bytes, 1 Kbytes or 2Kbytes. This determines the starting address of the interleave (bit 8, 9, 10 or 11).
+Token	=2F	// Do NOT change this line
+Offset	=98
+Width	=01
+Options	=[00]256 Bytes	// Move "*" to the desired Option
+         [01]512 Bytes
+         [02]1 KB
+         [03]2 KB
+         *[07]Auto
+
+Setup Question	= Channel interleaving hash
+Help String	= Controls whether or not the address bits are hashed during channel interleave mode. This field should not be used unless the interleaving is set to channel and the interleaving size is 256 or 512 bytes.
+Token	=30	// Do NOT change this line
+Offset	=99
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled
+         *[03]Auto
+
+Setup Question	= DF C-state control
+Help String	= Enable / disable DF C-states (DF::CstateControl[DfCstateDisable])
+Token	=31	// Do NOT change this line
+Offset	=9A
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled
+         [03]Auto
+
+Setup Question	= xGMI DLWM control
+Help String	= Controls xGMI dynamic link width management feature.
+Token	=32	// Do NOT change this line
+Offset	=9B
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled
+         *[03]Auto
+
+Setup Question	= Freeze DF module queues on error
+Help String	= Controls DF::DfGlobalCtrl[DisImmSyncFloodOnFatalError]  Disabling this option sets DF:DfGlobalCtrl[DisImmSyncFloodOnFatalError]
+Token	=33	// Do NOT change this line
+Offset	=9C
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled
+         *[03]Auto
+
+Setup Question	= Overclock
+Help String	= Memory Overclock Settings
+Token	=40	// Do NOT change this line
+Offset	=9F
+Width	=01
+Options	=*[FF]Auto	// Move "*" to the desired Option
+         [01]Enabled
+
+Setup Question	= Memory Clock Speed
+Help String	= Set the memory clock frequency.
+Token	=41	// Do NOT change this line
+Offset	=A0
+Width	=01
+Options	=*[FF]Auto	// Move "*" to the desired Option
+         [14]667MHz
+         [18]800MHz
+         [1C]933MHz
+         [20]1067MHz
+         [24]1200MHz
+         [28]1333MHz
+         [29]1367MHz
+         [2A]1400MHz
+         [2B]1433MHz
+         [2C]1467MHz
+         [2D]1500MHz
+         [2E]1533MHz
+         [2F]1567MHz
+         [30]1600MHz
+         [31]1633MHz
+         [32]1667MHz
+         [33]1700MHz
+         [34]1733MHz
+         [35]1767MHz
+         [36]1800MHz
+         [37]1833MHz
+         [38]1867MHz
+         [39]1900MHz
+         [3A]1933MHz
+         [3B]1967MHz
+         [3C]2000MHz
+         [04]333MHz
+         [06]400MHz
+         [0A]533MHz
+         [19]1050MHz
+         [1A]1066MHz
+         [3D]2033MHz
+         [3E]2067MHz
+         [3F]2100MHz
+
+Setup Question	= Tcl
+Help String	= Sets the tCL time.
+Token	=42	// Do NOT change this line
+Offset	=A1
+Width	=01
+Options	=[08]8 Clk	// Move "*" to the desired Option
+         [09]9 Clk
+         [0A]0Ah Clk
+         [0B]0Bh Clk
+         [0C]0Ch Clk
+         [0D]0Dh Clk
+         [0E]0Eh Clk
+         [0F]0Fh Clk
+         [10]10h Clk
+         [11]11h Clk
+         [12]12h Clk
+         [13]13h Clk
+         *[FF]Auto
+         [14]14h Clk
+         [15]15h Clk
+         [16]16h Clk
+         [17]17h Clk
+         [18]18h Clk
+         [19]19h Clk
+         [1A]1Ah Clk
+         [1B]1Bh Clk
+         [1C]1Ch Clk
+         [1D]1Dh Clk
+         [1E]1Eh Clk
+         [1F]1Fh Clk
+         [20]20h Clk
+         [21]21h Clk
+
+Setup Question	= Trcdrd
+Help String	= This sets the RAS# Active to CAS# read/write delay.
+Token	=43	// Do NOT change this line
+Offset	=A2
+Width	=01
+Options	=[08]8 Clk	// Move "*" to the desired Option
+         [09]9 Clk
+         [0A]0Ah Clk
+         [0B]0Bh Clk
+         [0C]0Ch Clk
+         [0D]0Dh Clk
+         [0E]0Eh Clk
+         [0F]0Fh Clk
+         [10]10h Clk
+         [14]14h Clk
+         [15]15h Clk
+         [16]16h Clk
+         [17]17h Clk
+         [18]18h Clk
+         [19]19h Clk
+         [1A]1Ah Clk
+         [11]11h Clk
+         [12]12h Clk
+         [13]13h Clk
+         *[FF]Auto
+         [1B]1Bh Clk
+
+Setup Question	= Trcdwr
+Help String	= This sets the RAS# Active to CAS# read/write delay.
+Token	=44	// Do NOT change this line
+Offset	=A3
+Width	=01
+Options	=*[FF]Auto	// Move "*" to the desired Option
+         [08]8 Clk
+         [09]9 Clk
+         [0A]0xA Clk
+         [0B]0xB Clk
+         [0C]0xC Clk
+         [0D]0xD Clk
+         [0E]0xE Clk
+         [0F]0xF Clk
+         [10]10h Clk
+         [11]11h Clk
+         [12]12h Clk
+         [13]13h Clk
+         [14]14h Clk
+         [15]15h Clk
+         [16]16h Clk
+         [17]17h Clk
+         [18]18h Clk
+         [19]19h Clk
+         [1A]1Ah Clk
+         [1B]1Bh Clk
+
+Setup Question	= Trp
+Help String	= Specify the row precharge time.
+Token	=45	// Do NOT change this line
+Offset	=A4
+Width	=01
+Options	=[08]8 Clk	// Move "*" to the desired Option
+         [09]9 Clk
+         [0A]0Ah Clk
+         [0B]0Bh Clk
+         [0C]0Ch Clk
+         [0D]0Dh Clk
+         [0E]0Eh Clk
+         [0F]0Fh Clk
+         [10]10h Clk
+         [11]11h Clk
+         [12]12h Clk
+         [13]13h Clk
+         *[FF]Auto
+         [14]14h Clk
+         [15]15h Clk
+         [16]16h Clk
+         [17]17h Clk
+         [18]18h Clk
+         [19]19h Clk
+         [1A]1Ah Clk
+         [1B]1Bh Clk
+
+Setup Question	= Tras
+Help String	= Specify the min RAS# active time.
+Token	=46	// Do NOT change this line
+Offset	=A5
+Width	=01
+Options	=[15]15h Clk	// Move "*" to the desired Option
+         [16]16h Clk
+         [17]17h Clk
+         [18]18h Clk
+         [19]19h Clk
+         [1A]1Ah Clk
+         [1B]1Bh Clk
+         [1C]1Ch Clk
+         [1D]1Dh Clk
+         [1E]1Eh Clk
+         [1F]1Fh Clk
+         [20]20h Clk
+         [21]21h Clk
+         [22]22h Clk
+         [23]23h Clk
+         [24]24h Clk
+         [25]25h Clk
+         [26]26h Clk
+         [27]27h Clk
+         [28]28h Clk
+         [29]29h Clk
+         [2A]2Ah Clk
+         *[FF]Auto
+         [2B]2Bh Clk
+         [2C]2Ch Clk
+         [2D]2Dh Clk
+         [2E]2Eh Clk
+         [2F]2Fh Clk
+         [30]30h Clk
+         [31]31h Clk
+         [32]32h Clk
+         [33]33h Clk
+         [34]34h Clk
+         [35]35h Clk
+         [36]36h Clk
+         [37]37h Clk
+         [38]38h Clk
+         [39]39h Clk
+         [3A]3Ah Clk
+
+Setup Question	= Trc Ctrl
+Help String	= Specify Trc
+Token	=47	// Do NOT change this line
+Offset	=A6
+Width	=01
+Options	=*[00]Auto	// Move "*" to the desired Option
+         [01]Manual
+
+Setup Question	= Trc
+Help String	= Active to Active/Refresh Delay Time. Valid values 87h-1Dh.
+Token	=48	// Do NOT change this line
+Offset	=A7
+Width	=01
+Value	=39
+
+Setup Question	= TrrdS
+Help String	= Activate to Activate Delay Time, different bank group (tRRD_S)
+Token	=49	// Do NOT change this line
+Offset	=A8
+Width	=01
+Options	=*[FF]Auto	// Move "*" to the desired Option
+         [04]4 Clk
+         [05]5 Clk
+         [06]6 Clk
+         [07]7 Clk
+         [08]8 Clk
+         [09]9 Clk
+         [0A]0Ah Clk
+         [0B]0Bh Clk
+         [0C]0Ch Clk
+
+Setup Question	= TrrdL
+Help String	= Activate to Activate Delay Time, same bank group (tRRD_L)
+Token	=4A	// Do NOT change this line
+Offset	=A9
+Width	=01
+Options	=*[FF]Auto	// Move "*" to the desired Option
+         [04]4 Clk
+         [05]5 Clk
+         [06]6 Clk
+         [07]7 Clk
+         [08]8 Clk
+         [09]9 Clk
+         [0A]0Ah Clk
+         [0B]0Bh Clk
+         [0C]0Ch Clk
+
+Setup Question	= Tfaw Ctrl
+Help String	= Specify Tfaw
+Token	=4B	// Do NOT change this line
+Offset	=AA
+Width	=01
+Options	=*[00]Auto	// Move "*" to the desired Option
+         [01]Manual
+
+Setup Question	= Tfaw
+Help String	= Four Activate Window Time. Valid values 36h-6h.
+Token	=4C	// Do NOT change this line
+Offset	=AB
+Width	=01
+Value	=1A
+
+Setup Question	= TwtrS
+Help String	= Minimum Write to Read Time, different bank group
+Token	=4D	// Do NOT change this line
+Offset	=AC
+Width	=01
+Options	=*[FF]Auto	// Move "*" to the desired Option
+         [02]2 Clk
+         [03]3 Clk
+         [04]4 Clk
+         [05]5 Clk
+         [06]6 Clk
+         [07]7 Clk
+         [08]8 Clk
+         [09]9 Clk
+         [0A]0Ah Clk
+         [0B]0Bh Clk
+         [0C]0Ch Clk
+         [0D]0Dh Clk
+         [0E]0Eh Clk
+
+Setup Question	= TwtrL
+Help String	= Minimum Write to Read Time, same bank group
+Token	=4E	// Do NOT change this line
+Offset	=AD
+Width	=01
+Options	=*[FF]Auto	// Move "*" to the desired Option
+         [02]2 Clk
+         [03]3 Clk
+         [04]4 Clk
+         [05]5 Clk
+         [06]6 Clk
+         [07]7 Clk
+         [08]8 Clk
+         [09]9 Clk
+         [0A]0Ah Clk
+         [0B]0Bh Clk
+         [0C]0Ch Clk
+         [0D]0Dh Clk
+         [0E]0Eh Clk
+
+Setup Question	= Twr Ctrl
+Help String	= Specify Twr
+Token	=4F	// Do NOT change this line
+Offset	=AE
+Width	=01
+Options	=*[00]Auto	// Move "*" to the desired Option
+         [01]Manual
+
+Setup Question	= Twr
+Help String	= Minimum Write Recovery Time. Valid value 51h-Ah
+Token	=50	// Do NOT change this line
+Offset	=AF
+Width	=01
+Value	=12
+
+Setup Question	= Trcpage Ctrl
+Help String	= Specify Trcpage
+Token	=51	// Do NOT change this line
+Offset	=B0
+Width	=01
+Options	=*[00]Auto	// Move "*" to the desired Option
+         [01]Manual
+
+Setup Question	= Trcpage
+Help String	= SDRAM Optional Features (tMAW, MAC). Valid value 3FFh - 0h
+Token	=52	// Do NOT change this line
+Offset	=B1
+Width	=02
+Value	=0
+
+Setup Question	= TrdrdScL Ctrl
+Help String	= Specify TrdrdScL
+Token	=53	// Do NOT change this line
+Offset	=B3
+Width	=01
+Options	=*[00]Auto	// Move "*" to the desired Option
+         [01]Manual
+
+Setup Question	= TrdrdScL
+Help String	= CAS to CAS Delay Time, same bank group. Valid values Fh-1h
+Token	=54	// Do NOT change this line
+Offset	=B4
+Width	=01
+Value	=3
+
+Setup Question	= TwrwrScL Ctrl
+Help String	= Specify TwrwrScL
+Token	=55	// Do NOT change this line
+Offset	=B5
+Width	=01
+Options	=*[00]Auto	// Move "*" to the desired Option
+         [01]Manual
+
+Setup Question	= TwrwrScL
+Help String	= CAS to CAS Delay Time, same bank group. Valid values 3Fh-1h
+Token	=56	// Do NOT change this line
+Offset	=B6
+Width	=01
+Value	=3
+
+Setup Question	= Trfc Ctrl
+Help String	= Specify Trfc
+Token	=57	// Do NOT change this line
+Offset	=B7
+Width	=01
+Options	=*[00]Auto	// Move "*" to the desired Option
+         [01]Manual
+
+Setup Question	= Trfc
+Help String	= Refresh Recovery Delay Time (tRFC1). Valid values 3DEh-3Ch
+Token	=58	// Do NOT change this line
+Offset	=B8
+Width	=02
+Value	=138
+
+Setup Question	= Trfc2 Ctrl
+Help String	= Specify Trfc2
+Token	=59	// Do NOT change this line
+Offset	=BA
+Width	=01
+Options	=*[00]Auto	// Move "*" to the desired Option
+         [01]Manual
+
+Setup Question	= Trfc2
+Help String	= Refresh Recovery Delay Time (tRFC2).  Valid values 3DEh-3Ch
+Token	=5A	// Do NOT change this line
+Offset	=BB
+Width	=02
+Value	=C0
+
+Setup Question	= Trfc4 Ctrl
+Help String	= Specify Trfc4
+Token	=5B	// Do NOT change this line
+Offset	=BD
+Width	=01
+Options	=*[00]Auto	// Move "*" to the desired Option
+         [01]Manual
+
+Setup Question	= Trfc4
+Help String	= Refresh Recovery Delay Time (tRFC4). Valid values 3DEh-3Ch
+Token	=5C	// Do NOT change this line
+Offset	=BE
+Width	=02
+Value	=84
+
+Setup Question	= Fail_CNT
+Help String	= The number of training failure/retries required before boot from recovery mode
+Token	=5D	// Do NOT change this line
+Offset	=C0
+Width	=01
+Value	=5
+
+Setup Question	= ProcODT
+Help String	= Specifies the Processor ODT
+Token	=5E	// Do NOT change this line
+Offset	=C1
+Width	=01
+Options	=*[FF]Auto	// Move "*" to the desired Option
+         [00]High Impedance
+         [01]480 ohm
+         [02]240 ohm
+         [03]160 ohm
+         [08]120 ohm
+         [09]96 ohm
+         [0A]80 ohm
+         [0B]68.6 ohm
+         [18]60 ohm
+         [19]53.3 ohm
+         [1A]48 ohm
+         [1B]43.6 ohm
+         [38]40 ohm
+         [39]36.9 ohm
+         [3A]34.3 ohm
+         [3B]32 ohm
+         [3E]30 ohm
+         [3F]28.2 ohm
+
+Setup Question	= Tcwl
+Help String	= No help string
+Token	=5F	// Do NOT change this line
+Offset	=C2
+Width	=01
+Options	=*[FF]Auto	// Move "*" to the desired Option
+         [09]9 Clk
+         [0A]0Ah Clk
+         [0B]0Bh Clk
+         [0C]0Ch Clk
+         [0E]0Eh Clk
+         [10]10h Clk
+         [12]12h Clk
+         [14]14h Clk
+
+Setup Question	= Trtp
+Help String	= Specifies the read CAS# to precharge time.
+Token	=60	// Do NOT change this line
+Offset	=C3
+Width	=01
+Options	=[08]8 Clk	// Move "*" to the desired Option
+         [09]9 Clk
+         [0A]0Ah Clk
+         [0B]0Bh Clk
+         *[FF]Auto
+         [0C]0Ch Clk
+         [0D]0Dh Clk
+         [05]5 Clk
+         [06]6 Clk
+         [07]7 Clk
+         [0E]0Eh Clk
+
+Setup Question	= Tcke
+Help String	= Specifies the CKE minimum high and low pulse width in memory clock cycles.
+Token	=61	// Do NOT change this line
+Offset	=159
+Width	=01
+Options	=*[FF]Auto	// Move "*" to the desired Option
+         [01]1 Clk
+         [02]2 Clk
+         [03]3 Clk
+         [04]4 Clk
+         [05]5 Clk
+         [06]6 Clk
+         [07]7 Clk
+         [08]8 Clk
+         [09]9 Clk
+         [0A]0Ah Clk
+         [0B]0Bh Clk
+         [0C]0Ch Clk
+         [0D]0Dh Clk
+         [0E]0Eh Clk
+         [0F]0Fh Clk
+         [10]10h Clk
+         [11]11h Clk
+         [12]12h Clk
+         [13]13h Clk
+         [14]14h Clk
+         [15]15h Clk
+         [16]16h Clk
+         [17]17h Clk
+         [18]18h Clk
+         [19]19h Clk
+         [1A]1Ah Clk
+         [1B]1Bh Clk
+         [1C]1Ch Clk
+         [1D]1Dh Clk
+         [1E]1Eh Clk
+         [1F]1Fh Clk
+
+Setup Question	= TrdrdSc
+Help String	= write to write timing same DIMM same chip select.
+Token	=62	// Do NOT change this line
+Offset	=144
+Width	=01
+Options	=[01]1 Clk	// Move "*" to the desired Option
+         [02]2 Clk
+         [03]3 Clk
+         [04]4 Clk
+         [05]5 Clk
+         [06]6 Clk
+         [07]7 Clk
+         [08]8 Clk
+         [09]9 Clk
+         [0A]0Ah Clk
+         [0B]0Bh Clk
+         *[FF]Auto
+
+Setup Question	= TrdrdSd
+Help String	= write to write timing same DIMM same chip select.
+Token	=63	// Do NOT change this line
+Offset	=150
+Width	=01
+Options	=[02]2 Clk	// Move "*" to the desired Option
+         [03]3 Clk
+         [04]4 Clk
+         [05]5 Clk
+         [06]6 Clk
+         [07]7 Clk
+         [08]8 Clk
+         [09]9 Clk
+         [0A]0Ah Clk
+         [0B]0Bh Clk
+         *[FF]Auto
+         [01]1 Clk
+         [0C]0Ch Clk
+         [0D]0Dh Clk
+         [0E]0Eh Clk
+         [0F]0Fh Clk
+
+Setup Question	= TrdrdDd
+Help String	= write to write timing same DIMM same chip select.
+Token	=64	// Do NOT change this line
+Offset	=152
+Width	=01
+Options	=[02]2 Clk	// Move "*" to the desired Option
+         [03]3 Clk
+         [04]4 Clk
+         [05]5 Clk
+         [06]6 Clk
+         [07]7 Clk
+         [08]8 Clk
+         [09]9 Clk
+         [0A]0Ah Clk
+         [0B]0Bh Clk
+         *[FF]Auto
+         [01]1 Clk
+         [0C]0Ch Clk
+         [0D]0Dh Clk
+         [0E]0Eh Clk
+         [0F]0Fh Clk
+
+Setup Question	= TwrwrSc
+Help String	= write to write timing same DIMM same chip select.
+Token	=65	// Do NOT change this line
+Offset	=15A
+Width	=01
+Options	=[01]1 Clk	// Move "*" to the desired Option
+         [02]2 Clk
+         [03]3 Clk
+         [04]4 Clk
+         [05]5 Clk
+         [06]6 Clk
+         [07]7 Clk
+         [08]8 Clk
+         [09]9 Clk
+         [0A]0Ah Clk
+         [0B]0Bh Clk
+         *[FF]Auto
+         [0C]0Ch Clk
+         [0D]0Dh Clk
+         [0E]0Eh Clk
+         [0F]0Fh Clk
+
+Setup Question	= TwrwrSd
+Help String	= write to write timing same DIMM same chip select.
+Token	=66	// Do NOT change this line
+Offset	=151
+Width	=01
+Options	=[02]2 Clk	// Move "*" to the desired Option
+         [03]3 Clk
+         [04]4 Clk
+         [05]5 Clk
+         [06]6 Clk
+         [07]7 Clk
+         [08]8 Clk
+         [09]9 Clk
+         [0A]0Ah Clk
+         [0B]0Bh Clk
+         *[FF]Auto
+         [01]1 Clk
+         [0C]0Ch Clk
+         [0D]0Dh Clk
+         [0E]0Eh Clk
+         [0F]0Fh Clk
+
+Setup Question	= TwrwrDd
+Help String	= write to write timing same DIMM same chip select.
+Token	=67	// Do NOT change this line
+Offset	=153
+Width	=01
+Options	=[02]2 Clk	// Move "*" to the desired Option
+         [03]3 Clk
+         [04]4 Clk
+         [05]5 Clk
+         [06]6 Clk
+         [07]7 Clk
+         [08]8 Clk
+         [09]9 Clk
+         [0A]0Ah Clk
+         [0B]0Bh Clk
+         *[FF]Auto
+         [01]1 Clk
+         [0C]0Ch Clk
+         [0D]0Dh Clk
+         [0E]0Eh Clk
+         [0F]0Fh Clk
+
+Setup Question	= Trdwr
+Help String	= This sets the tWRTTO time.
+Token	=68	// Do NOT change this line
+Offset	=156
+Width	=01
+Options	=[02]2 Clk	// Move "*" to the desired Option
+         [03]3 Clk
+         [04]4 Clk
+         [05]5 Clk
+         [06]6 Clk
+         [07]7 Clk
+         [08]8 Clk
+         [09]9 Clk
+         [0A]0Ah Clk
+         [0B]0Bh Clk
+         [0C]0Ch Clk
+         [0D]0Dh Clk
+         [0E]0Eh Clk
+         [0F]0Fh Clk
+         [10]10h Clk
+         [11]11h Clk
+         [12]12h Clk
+         [13]13h Clk
+         [14]14h Clk
+         [15]15h Clk
+         [16]16h Clk
+         [17]17h Clk
+         [18]18h Clk
+         [19]19h Clk
+         [1A]1Ah Clk
+         [1B]1Bh Clk
+         *[FF]Auto
+         [01]1 Clk
+         [1C]1Ch Clk
+         [1D]1Dh Clk
+         [1E]1Eh Clk
+         [1F]1Fh Clk
+
+Setup Question	= Twrrd
+Help String	= Specify the write to read delay when accessing different DIMMs.
+Token	=69	// Do NOT change this line
+Offset	=143
+Width	=01
+Options	=[01]1 Clk	// Move "*" to the desired Option
+         [02]2 Clk
+         [03]3 Clk
+         [04]4 Clk
+         [05]5 Clk
+         [06]6 Clk
+         [07]7 Clk
+         [08]8 Clk
+         [09]9 Clk
+         [0A]0Ah Clk
+         [0B]0Bh Clk
+         *[FF]Auto
+         [0C]0Ch
+         [0D]0Dh
+         [0E]0Eh
+         [0F]0Fh
+
+Setup Question	= Cmd2T
+Help String	= Select between 1T and 2T mode on ADDR/CMD
+Token	=6B	// Do NOT change this line
+Offset	=14E
+Width	=01
+Options	=[00]1T	// Move "*" to the desired Option
+         [01]2T
+         *[FF]Auto
+
+Setup Question	= Gear Down Mode
+Help String	= No help string
+Token	=6C	// Do NOT change this line
+Offset	=155
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled
+         *[FF]Auto
+
+Setup Question	= Data Mask
+Help String	= No help string
+Token	=6D	// Do NOT change this line
+Offset	=160
+Width	=01
+Options	=*[FF]Auto	// Move "*" to the desired Option
+         [01]Enabled
+         [00]Disabled
+
+Setup Question	= Power Down Enable
+Help String	= Enable or disable DDR power down mode
+Token	=6E	// Do NOT change this line
+Offset	=14C
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled
+         *[FF]Auto
+
+Setup Question	= CAD Bus Timing User Controls
+Help String	= Setup time on CAD bus signals to Auto or Manual
+Token	=6F	// Do NOT change this line
+Offset	=14A
+Width	=01
+Options	=*[FF]Auto	// Move "*" to the desired Option
+         [01]Manual
+
+Setup Question	= AddrCmdSetup
+Help String	= Setup time on CAD bus signals. Valid values 3Fh-0h.
+Token	=70	// Do NOT change this line
+Offset	=14B
+Width	=01
+Value	=0
+
+Setup Question	= CsOdtSetup
+Help String	= Setup time on CAD bus signals. Valid values 3Fh-0h.
+Token	=71	// Do NOT change this line
+Offset	=146
+Width	=01
+Value	=0
+
+Setup Question	= CkeSetup
+Help String	= Setup time on CAD bus signals. Valid values 3Fh-0h.
+Token	=72	// Do NOT change this line
+Offset	=145
+Width	=01
+Value	=0
+
+Setup Question	= CAD Bus Drive Strength User Controls
+Help String	= Drive Strength on CAD bus signals to Auto or Manual
+Token	=73	// Do NOT change this line
+Offset	=154
+Width	=01
+Options	=*[FF]Auto	// Move "*" to the desired Option
+         [01]Manual
+
+Setup Question	= ClkDrvStren
+Help String	= No help string
+Token	=74	// Do NOT change this line
+Offset	=149
+Width	=01
+Options	=*[FF]Auto	// Move "*" to the desired Option
+         [00]120.0 Ohm
+         [01]60.0 Ohm
+         [03]40.0 Ohm
+         [07]30.0 Ohm
+         [0F]24.0 Ohm
+         [1F]20.0 Ohm
+
+Setup Question	= AddrCmdDrvStren
+Help String	= No help string
+Token	=75	// Do NOT change this line
+Offset	=15B
+Width	=01
+Options	=*[FF]Auto	// Move "*" to the desired Option
+         [00]120.0 Ohm
+         [01]60.0 Ohm
+         [03]40.0 Ohm
+         [07]30.0 Ohm
+         [0F]24.0 Ohm
+         [1F]20.0 Ohm
+
+Setup Question	= CsOdtDrvStren
+Help String	= No help string
+Token	=76	// Do NOT change this line
+Offset	=158
+Width	=01
+Options	=*[FF]Auto	// Move "*" to the desired Option
+         [00]120.0 Ohm
+         [01]60.0 Ohm
+         [03]40.0 Ohm
+         [07]30.0 Ohm
+         [0F]24.0 Ohm
+         [1F]20.0 Ohm
+
+Setup Question	= CkeDrvStren
+Help String	= No help string
+Token	=77	// Do NOT change this line
+Offset	=14F
+Width	=01
+Options	=*[FF]Auto	// Move "*" to the desired Option
+         [00]120.0 Ohm
+         [01]60.0 Ohm
+         [03]40.0 Ohm
+         [07]30.0 Ohm
+         [0F]24.0 Ohm
+         [1F]20.0 Ohm
+
+Setup Question	= Data Bus Configuration User Controls
+Help String	= Specify the mode for drive strength to Auto or Manual
+Token	=78	// Do NOT change this line
+Offset	=157
+Width	=01
+Options	=*[FF]Auto	// Move "*" to the desired Option
+         [01]Manual
+
+Setup Question	= RttNom
+Help String	= No help string
+Token	=79	// Do NOT change this line
+Offset	=14D
+Width	=01
+Options	=[00]Rtt_Nom Disable	// Move "*" to the desired Option
+         [01]RZQ/4
+         [02]RZQ/2
+         [03]RZQ/6
+         [04]RZQ/1
+         [05]RZQ/5
+         [06]RZQ/3
+         [07]RZQ/7
+         *[FF]Auto
+
+Setup Question	= RttWr
+Help String	= No help string
+Token	=7A	// Do NOT change this line
+Offset	=148
+Width	=01
+Options	=[00]Dynamic ODT Off	// Move "*" to the desired Option
+         [01]RZQ/2
+         [02]RZQ/1
+         [03]Hi-Z
+         [04]RZQ/3
+         *[FF]Auto
+
+Setup Question	= RttPark
+Help String	= No help string
+Token	=7B	// Do NOT change this line
+Offset	=142
+Width	=01
+Options	=[00]Rtt_PARK Disable	// Move "*" to the desired Option
+         [01]RZQ/4
+         [02]RZQ/2
+         [03]RZQ/6
+         [04]RZQ/1
+         [05]RZQ/5
+         [06]RZQ/3
+         [07]RZQ/7
+         *[FF]Auto
+
+Setup Question	= Data Poisoning
+Help String	=  Enable/disable data poisoning: UMC_CH::EccCtrl[UcFatalEn] UMC_CH::EccCtrl[WrEccEn] Should be enabled/disabled together.
+Token	=7C	// Do NOT change this line
+Offset	=C4
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled
+         *[FF]Auto
+
+Setup Question	= DRAM ECC Symbol Size
+Help String	= DRAM ECC Symbol Size (x4/x8) - UMC_CH::EccCtrl[EccSymbolSize]
+Token	=7E	// Do NOT change this line
+Offset	=140
+Width	=01
+Options	=[00]x4	// Move "*" to the desired Option
+         [01]x8
+         *[FF]Auto
+
+Setup Question	= DRAM ECC Enable
+Help String	= Use this option to enable / disable DRAM ECC. Auto will set ECC to enable.
+Token	=7F	// Do NOT change this line
+Offset	=13F
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled
+         *[FF]Auto
+
+Setup Question	= TSME
+Help String	= Transparent SME: AddrTweakEn = 1; ForceEncrEn =0; DataEncrEn = 1
+Token	=703D	// Do NOT change this line
+Offset	=C5
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled
+         *[FF]Auto
+
+Setup Question	= Chipselect Interleaving
+Help String	= Interleave memory blocks across the DRAM chip selects for node 0.
+Token	=80	// Do NOT change this line
+Offset	=C6
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         *[FF]Auto
+
+Setup Question	= BankGroupSwap
+Help String	= No help string
+Token	=81	// Do NOT change this line
+Offset	=C7
+Width	=01
+Options	=[02]APU	// Move "*" to the desired Option
+         [01]CPU
+         [00]Disabled
+         *[FF]Auto
+
+Setup Question	= BankGroupSwapAlt
+Help String	= No help string
+Token	=82	// Do NOT change this line
+Offset	=147
+Width	=01
+Options	=[01]Enabled	// Move "*" to the desired Option
+         [00]Disabled
+         *[FF]Auto
+
+Setup Question	= Address Hash Bank
+Help String	= Enable or disable bank address hashing
+Token	=83	// Do NOT change this line
+Offset	=C8
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled
+         *[FF]Auto
+
+Setup Question	= Address Hash CS
+Help String	= Enable or disable CS address hashing
+Token	=84	// Do NOT change this line
+Offset	=C9
+Width	=01
+Options	=*[FF]Auto	// Move "*" to the desired Option
+         [01]Enabled
+         [00]Disabled
+
+Setup Question	= MBIST Enable
+Help String	= Enable or disable Memory MBIST
+Token	=85	// Do NOT change this line
+Offset	=CA
+Width	=01
+Options	=*[FF]Auto	// Move "*" to the desired Option
+         [00]Disabled
+         [01]Enabled
+
+Setup Question	= MBIST Test Mode
+Help String	= Select MBIST Test Mode -Interface Mode (Tests Single and Multiple CS transactions and Basic Connectivity) or Data Eye Mode (Measures Voltage vs. Timing)
+Token	=86	// Do NOT change this line
+Offset	=CB
+Width	=01
+Options	=*[FF]Auto	// Move "*" to the desired Option
+         [00]Interface Mode
+         [01]Data Eye Mode
+
+Setup Question	= MBIST Aggressors
+Help String	= Enable or disable MBIST Aggressor test
+Token	=87	// Do NOT change this line
+Offset	=CC
+Width	=01
+Options	=*[FF]Auto	// Move "*" to the desired Option
+         [00]Disabled
+         [01]Enabled
+
+Setup Question	= MBIST Per Bit Slave Die Reporting
+Help String	= Reports 2D Data Eye Results in ABL Log for each DQ, Chipselect, and Channel
+Token	=88	// Do NOT change this line
+Offset	=CD
+Width	=01
+Options	=*[FF]Auto	// Move "*" to the desired Option
+         [00]Disabled
+         [01]Enabled
+
+Setup Question	= System Configuration
+Help String	= Warning: Select System Configuration may cause the system to hang, as some System Configuration may not be supported by your OPN.  
+Token	=7041	// Do NOT change this line
+Offset	=CE
+Width	=01
+Options	=[01]12W POR Configuration - 1 Commercial/Consumer	// Move "*" to the desired Option
+         [02]15W POR Configuration - 2 Commercial/Consumer
+         [03]25W POR Configuration - 3 Commercial/Consumer
+         [04]35W POR Configuration - 4 Consumer
+         [05]45W POR Configuration - 5 Consumer
+         [06]54W POR Configuration - 6 Consumer
+         [07]35W POR Configuration - 7 Embedded
+         [08]45W POR Configuration - 8 Embedded
+         [09]54W POR Configuration - 9 Embedded
+         *[0F]Auto
+
+Setup Question	= Audio IOs
+Help String	= Audio IOs control
+Token	=8D	// Do NOT change this line
+Offset	=CF
+Width	=01
+Options	=*[0F]Auto	// Move "*" to the desired Option
+         [00]MAX HDA / MIN SoundWire
+         [01]MAX mHDA / MIN SoundWire
+         [02]MAX SoundWire / MIN HDA
+         [03]MAX SoundWire / MIN mHDA
+         [04]I2S/TDM
+         [07]DISABLE AUDIO IOs
+         [08]Soundwire
+
+Setup Question	= System Temperature Tracking
+Help String	= System Temperature Tracking [0 = disabled; 1 = enabled]
+Token	=8E	// Do NOT change this line
+Offset	=15C
+Width	=04
+Options	=*[0F]Auto	// Move "*" to the desired Option
+         [00]Disable
+         [01]Enable
+
+Setup Question	= Integrated Graphics Controller
+Help String	= Enable Integrated Graphics controller
+Token	=8F	// Do NOT change this line
+Offset	=D0
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         [02]Forces
+         *[0F]Auto
+
+Setup Question	= UMA Mode
+Help String	= UMA Mode
+Token	=90	// Do NOT change this line
+Offset	=D1
+Width	=01
+Options	=*[0F]Auto	// Move "*" to the desired Option
+         [01]UMA_SPECIFIED
+         [02]UMA_AUTO
+
+Setup Question	= UMA Version
+Help String	= UMA Legacy Version  UMA Non Legacy Version  Hybrid Secure
+Token	=91	// Do NOT change this line
+Offset	=D2
+Width	=01
+Options	=[00]Legacy	// Move "*" to the desired Option
+         [01]Non-Legacy
+         [02]Hybrid Secure
+         *[0F]Auto
+
+Setup Question	= Display Resulotuon
+Help String	= Display Resolution
+Token	=92	// Do NOT change this line
+Offset	=D3
+Width	=01
+Options	=[00]1920x1080 and below	// Move "*" to the desired Option
+         [01]2560x1600
+         [02]3840x2160
+         *[FF]Auto
+
+Setup Question	= UMA Frame buffer Size
+Help String	= Set UMA FB size
+Token	=93	// Do NOT change this line
+Offset	=D4
+Width	=04
+Options	=*[FFFFFFFF]Auto	// Move "*" to the desired Option
+         [40]64M
+         [80]128M
+         [100]256M
+         [180]384M
+         [200]512M
+         [50]80M
+         [60]96M
+         [300]768M
+         [400]1G
+         [800]2G
+         [C00]3G
+         [1000]4G
+         [2000]8G
+         [4000]16G
+
+Setup Question	= NB Azalia
+Help String	= Enable Integrate HD Audio controller
+Token	=94	// Do NOT change this line
+Offset	=D8
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled
+         *[0F]Auto
+
+Setup Question	= IOMMU
+Help String	= Enable/Disable IOMMU
+Token	=95	// Do NOT change this line
+Offset	=D9
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled
+         [0F]Auto
+
+Setup Question	= PSPP Policy
+Help String	= No help string
+Token	=96	// Do NOT change this line
+Offset	=DA
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         *[01]Performance
+         [02]Balanced
+         [03]Power Saving
+         [0F]Auto
+
+Setup Question	= Fan Control
+Help String	= Auto = Use the default fan controller settings  Manual = User can set customized fan controller settings
+Token	=97	// Do NOT change this line
+Offset	=DB
+Width	=01
+Options	=[01]Manual	// Move "*" to the desired Option
+         *[00]Auto
+
+Setup Question	= Force PWM Control
+Help String	= Unforce = Do not force the fan PWM  Force = Force the fan PWM to the use specified value
+Token	=98	// Do NOT change this line
+Offset	=DC
+Width	=01
+Options	=[01]Force	// Move "*" to the desired Option
+         *[00]Unforce
+
+Setup Question	= Force PWM
+Help String	= Specify the PWM to force the fan to [0-100]
+Token	=99	// Do NOT change this line
+Offset	=DD
+Width	=01
+Value	=<0>
+
+Setup Question	= Fan Table Control
+Help String	= Auto = Use the default fan table  Manual = User can set customized fan table
+Token	=9A	// Do NOT change this line
+Offset	=DE
+Width	=01
+Options	=[01]Manual	// Move "*" to the desired Option
+         *[00]Auto
+
+Setup Question	= Low Temperature
+Help String	= Low Temperature ['C]
+Token	=9B	// Do NOT change this line
+Offset	=DF
+Width	=01
+Value	=<0>
+
+Setup Question	= Medium Temperature
+Help String	= Medium Temperature ['C]
+Token	=9C	// Do NOT change this line
+Offset	=E0
+Width	=01
+Value	=<0>
+
+Setup Question	= High Temperature
+Help String	= High Temperature ['C]
+Token	=9D	// Do NOT change this line
+Offset	=E1
+Width	=01
+Value	=<0>
+
+Setup Question	= Critical Temperature
+Help String	= Critical Temperature ['C]
+Token	=9E	// Do NOT change this line
+Offset	=E2
+Width	=01
+Value	=<0>
+
+Setup Question	= Low Pwm
+Help String	= Low Pwm [0-100]
+Token	=9F	// Do NOT change this line
+Offset	=E3
+Width	=01
+Value	=<0>
+
+Setup Question	= Medium Pwm
+Help String	= Medium Pwm [0-100]
+Token	=A0	// Do NOT change this line
+Offset	=E4
+Width	=01
+Value	=<0>
+
+Setup Question	= High Pwm
+Help String	= High Pwm [0-100]
+Token	=A1	// Do NOT change this line
+Offset	=E5
+Width	=01
+Value	=<0>
+
+Setup Question	= Temperature Hysteresis
+Help String	= Temperature Hysteresis ['C]
+Token	=A2	// Do NOT change this line
+Offset	=E6
+Width	=01
+Value	=<0>
+
+Setup Question	= Pwm Frequency
+Help String	= 0 = 25kHz  1 = 100Hz
+Token	=A3	// Do NOT change this line
+Offset	=E7
+Width	=01
+Options	=[01]100Hz	// Move "*" to the desired Option
+         *[00]25kHz
+
+Setup Question	= Fan Polarity
+Help String	= 0 = negative  1 = positive
+Token	=A4	// Do NOT change this line
+Offset	=E8
+Width	=01
+Options	=*[00]Negative	// Move "*" to the desired Option
+         [01]Positive
+
+Setup Question	= SATA Controller
+Help String	= Disable or enable OnChip SATA controller
+Token	=704D	// Do NOT change this line
+Offset	=E9
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled
+         *[0F]Auto
+
+Setup Question	= SATA Mode
+Help String	= Select OnChip SATA Type. Don't select RAID for Raven FP5 platform. Raven FP5 doesn't support RAID.
+Token	=704E	// Do NOT change this line
+Offset	=EA
+Width	=01
+Options	=[02]AHCI	// Move "*" to the desired Option
+         [05]AHCI as ID 0x7904
+         *[0F]Auto
+         [01]RAID
+
+Setup Question	= Sata RAS Support
+Help String	= Disable or enable Sata RAS Support
+Token	=AF	// Do NOT change this line
+Offset	=EB
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled
+         *[0F]Auto
+
+Setup Question	= Sata Disabled AHCI Prefetch Function
+Help String	= Disable or enable Sata Disabled AHCI Prefetch Function
+Token	=B0	// Do NOT change this line
+Offset	=EC
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled
+         *[0F]Auto
+
+Setup Question	= Aggresive SATA Device Sleep Port 0
+Help String	= No help string
+Token	=B1	// Do NOT change this line
+Offset	=ED
+Width	=01
+Options	=*[00]Disable	// Move "*" to the desired Option
+         [01]Enable
+         [0F]Auto
+
+Setup Question	= Aggresive SATA Device Sleep Port 1
+Help String	= No help string
+Token	=B2	// Do NOT change this line
+Offset	=EE
+Width	=01
+Options	=*[00]Disable	// Move "*" to the desired Option
+         [01]Enable
+         [0F]Auto
+
+Setup Question	= XHCI0 controller enable
+Help String	= Enable or disable USB3 controller.
+Token	=B3	// Do NOT change this line
+Offset	=EF
+Width	=01
+Options	=*[01]Enabled	// Move "*" to the desired Option
+         [00]Disabled
+         [0F]Auto
+
+Setup Question	= XHCI1 controller enable
+Help String	= Enable or disable USB3 controller.
+Token	=B4	// Do NOT change this line
+Offset	=F0
+Width	=01
+Options	=*[01]Enabled	// Move "*" to the desired Option
+         [00]Disabled
+         [0F]Auto
+
+Setup Question	= Ac Loss Control
+Help String	= Select Ac Loss Control Method
+Token	=B5	// Do NOT change this line
+Offset	=F2
+Width	=01
+Options	=[00]Always Off	// Move "*" to the desired Option
+         [01]Always On
+         [02]Reserved
+         *[03]Previous
+
+Setup Question	= I2C 0 Enable
+Help String	= No help string
+Token	=B6	// Do NOT change this line
+Offset	=F3
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled
+         [0F]Auto
+
+Setup Question	= I2C 1 Enable
+Help String	= No help string
+Token	=B7	// Do NOT change this line
+Offset	=F4
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled
+         [0F]Auto
+
+Setup Question	= I2C 2 Enable
+Help String	= No help string
+Token	=B8	// Do NOT change this line
+Offset	=F5
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled
+         [0F]Auto
+
+Setup Question	= I2C 3 Enable
+Help String	= No help string
+Token	=B9	// Do NOT change this line
+Offset	=F6
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled
+         [0F]Auto
+
+Setup Question	= I2C 4 Enable
+Help String	= No help string
+Token	=BA	// Do NOT change this line
+Offset	=F7
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled
+         [0F]Auto
+
+Setup Question	= I2C 5 Enable
+Help String	= No help string
+Token	=BB	// Do NOT change this line
+Offset	=F8
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled
+         [0F]Auto
+
+Setup Question	= Uart 0 Enable
+Help String	= Uart 0 has no HW FC if Uart 2 is enabled
+Token	=BC	// Do NOT change this line
+Offset	=F9
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled
+         [0F]Auto
+
+Setup Question	= Uart 0 Legacy Options
+Help String	= No help string
+Token	=BD	// Do NOT change this line
+Offset	=FA
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]0x2E8
+         [02]0x2F8
+         [03]0x3E8
+         [04]0x3F8
+         [0F]Auto
+
+Setup Question	= Uart 1 Enable
+Help String	= Uart 1 has no HW FC if Uart 3 is enabled
+Token	=BE	// Do NOT change this line
+Offset	=FB
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled
+         [0F]Auto
+
+Setup Question	= Uart 1 Legacy Options
+Help String	= No help string
+Token	=BF	// Do NOT change this line
+Offset	=FC
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]0x2E8
+         [02]0x2F8
+         [03]0x3E8
+         [04]0x3F8
+         [0F]Auto
+
+Setup Question	= Uart 2 Enable (no HW FC)
+Help String	= No help string
+Token	=C0	// Do NOT change this line
+Offset	=FD
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled
+         [0F]Auto
+
+Setup Question	= Uart 2 Legacy Options
+Help String	= No help string
+Token	=C1	// Do NOT change this line
+Offset	=FE
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]0x2E8
+         [02]0x2F8
+         [03]0x3E8
+         [04]0x3F8
+         [0F]Auto
+
+Setup Question	= Uart 3 Enable (no HW FC)
+Help String	= No help string
+Token	=C2	// Do NOT change this line
+Offset	=FF
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled
+         [0F]Auto
+
+Setup Question	= Uart 3 Legacy Options
+Help String	= No help string
+Token	=C3	// Do NOT change this line
+Offset	=100
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]0x2E8
+         [02]0x2F8
+         [03]0x3E8
+         [04]0x3F8
+         [0F]Auto
+
+Setup Question	= ESPI Enable
+Help String	= No help string
+Token	=C4	// Do NOT change this line
+Offset	=101
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled
+         *[0F]Auto
+
+Setup Question	= XGBE0 enable
+Help String	= Enable or disable Ethernet controller.
+Token	=C5	// Do NOT change this line
+Offset	=161
+Width	=01
+Options	=[01]Enabled	// Move "*" to the desired Option
+         *[00]Disabled
+         [0F]Auto
+
+Setup Question	= XGBE1 enable
+Help String	= Enable or disable Ethernet controller.
+Token	=C6	// Do NOT change this line
+Offset	=162
+Width	=01
+Options	=[01]Enabled	// Move "*" to the desired Option
+         *[00]Disabled
+         [0F]Auto
+
+Setup Question	= eMMC/SD Configure
+Help String	= No help string
+Token	=C7	// Do NOT change this line
+Offset	=102
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]SD Normal Speed
+         [02]SD High Speed
+         [03]SD UHSI-SDR50
+         [04]SD UHSI-DDR50
+         [05]SD UHSI-SDR104
+         [06]eMMC Emmc Backward Compatibility
+         [07]eMMC High Speed SDR
+         [08]eMMC High Speed DDR
+         [09]eMMC HS200
+         [0A]eMMC HS400
+         [0B]eMMC HS300
+         [0F]Auto
+
+Setup Question	= Driver Type
+Help String	= Bios will select MS driver for SD selections.
+Token	=C8	// Do NOT change this line
+Offset	=103
+Width	=01
+Options	=[00]AMD eMMC Driver	// Move "*" to the desired Option
+         [01]MS Driver
+         [02]MS eMMC Driver
+         *[0F]Auto
+
+Setup Question	= D3 Cold Support
+Help String	= No help string
+Token	=C9	// Do NOT change this line
+Offset	=104
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled
+         [0F]Auto
+
+Setup Question	= eMMC Boot
+Help String	= No help string
+Token	=CA	// Do NOT change this line
+Offset	=105
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled
+         *[0F]Auto
+
+Setup Question	= LPC Clock Run control
+Help String	= No help string
+Token	=CB	// Do NOT change this line
+Offset	=106
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled
+         *[0F]Auto
+
+Setup Question	= Toggle All PwrGood On Cf9
+Help String	= No help string
+Token	=CC	// Do NOT change this line
+Offset	=141
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled
+         *[02]Auto
+
+Setup Question	= Special Display Features
+Help String	= Enable/Disable HybridGraphics
+Token	=7DE	// Do NOT change this line
+Offset	=04
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [04]HybridGraphics
+
+Setup Question	= D3Cold Support
+Help String	= Enable/Disable PCIe x8 Slot D3Cold
+Token	=02	// Do NOT change this line
+Offset	=3E
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled 
+
+Setup Question	= NVIDIA DGPU Power Enable
+Help String	= For NVIDIA mobile DGPU card only. Output DGPU_EN# A19 pin and DGPU_SEL# B17 pin to high at every power on state.
+Token	=03	// Do NOT change this line
+Offset	=42
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled 
+
+Setup Question	= Discrete GPU Hotplug Mode
+Help String	= Select Discrete GPU Hotplug Mode - HotplugEnhanced or HotplugBasic
+Token	=04	// Do NOT change this line
+Offset	=2E
+Width	=01
+Options	=[00]Basic Mode	// Move "*" to the desired Option
+         *[01]Enhanced Mode
+
+Setup Question	= Non-Eval Discrete GPU Support
+Help String	= Enable to support Non-Eval Discrete GPU that doesn't have specific EVAL_PWRGD(A5), EVAL_PRESENT#(B30)
+Token	=05	// Do NOT change this line
+Offset	=41
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled 
+
+Setup Question	= Discrete GPU HPD Circuitry
+Help String	= Enable/Disable Discrete GPU Display HPD Circuitry
+Token	=06	// Do NOT change this line
+Offset	=2F
+Width	=01
+Options	=*[00]OR Circuitry	// Move "*" to the desired Option
+         [01]Pulse Circuitry
+
+Setup Question	= Discrete GPU's Audio
+Help String	= Disable Discrete GPU's Audio or keep its ROM strap setting
+Token	=07	// Do NOT change this line
+Offset	=05
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Keep ROM Strap Setting
+
+Setup Question	= Discrete GPU BOMACO Support
+Help String	= Enable/Disable Discrete GPU BOMACO Support
+Token	=7E4	// Do NOT change this line
+Offset	=30
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled 
+
+Setup Question	= MACO-PWR Timing   (us)
+Help String	= MACO-PWR Timing: MACO_EN assert to PWR_EN deassert
+Token	=08	// Do NOT change this line
+Offset	=31
+Width	=01
+Value	=<10>
+
+Setup Question	= PWROFF-RST Timing (ms)
+Help String	= PWROFF-RST Timing: PWR_EN deassert to PERSTb assert
+Token	=09	// Do NOT change this line
+Offset	=32
+Width	=01
+Value	=<20>
+
+Setup Question	= PWRON-RST Timing  (ms)
+Help String	= PWRON-RST Timing: PWR_EN assert to PERSTb deassert
+Token	=0A	// Do NOT change this line
+Offset	=33
+Width	=01
+Value	=<20>
+
+Setup Question	= RST-MACO Timing   (ms)
+Help String	= RST-MACO Timing: PERSTb deassert to MACO_EN deassert
+Token	=0B	// Do NOT change this line
+Offset	=34
+Width	=01
+Value	=<1>
+
+Setup Question	= Primary Video Adaptor
+Help String	= Select Internal/External Graphics
+Token	=0C	// Do NOT change this line
+Offset	=06
+Width	=01
+Options	=*[01]Int Graphics (IGD)	// Move "*" to the desired Option
+         [02]Ext Graphics (PEG)
+
+Setup Question	= Above 4GB MMIO Limit
+Help String	= Select Above 4GB MMIO Limit to 35~48bits limit.
+Token	=0D	// Do NOT change this line
+Offset	=3D
+Width	=01
+Options	=[23]35bit (32GB)	// Move "*" to the desired Option
+         [24]36bit (64GB)
+         [25]37bit (128GB)
+         [26]38bit (256GB)
+         [27]39bit (512GB)
+         *[28]40bit (1TB)
+         [29]41bit (2TB)
+         [2A]42bit (4TB)
+         [2B]43bit (8TB)
+         [2C]44bit (16TB)
+         [2D]45bit (32TB)
+         [2E]46bit (64TB)
+         [2F]47bit (128TB)
+         [30]48bit (256TB)
+
+Setup Question	= StallForUnlock
+Help String	= StallForUnlock Enable/Disable
+Token	=0E	// Do NOT change this line
+Offset	=39
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled 
+
+Setup Question	= HDT BreakPoint for Boot
+Help String	= HDT BreakPoint for Boot Enable/Disable
+Token	=0F	// Do NOT change this line
+Offset	=3A
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled 
+
+Setup Question	= SW BreakPoint for S3
+Help String	= SW BreakPoint for S3 Enable/Disable
+Token	=10	// Do NOT change this line
+Offset	=3B
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled 
+
+Setup Question	= Touch Panel Support
+Help String	= Enable/Disable exposing of _HID(PNP0C50) in ACPI ASL code to OS
+Token	=11	// Do NOT change this line
+Offset	=07
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Under I2C 0 Bus
+         [02]Under I2C 1 Bus
+         [03]Under I2C 2 Bus
+         [04]Under I2C 3 Bus
+         [05]ELAN TSP Under I2C 0 Bus
+         [06]ELAN TSP Under I2C 1 Bus
+         [07]ELAN TSP Under I2C 2 Bus
+         [08]ELAN TSP Under I2C 3 Bus
+
+Setup Question	= Touch Pad Support
+Help String	= Enable/Disable exposing of _HID(PNP0C50) in ACPI ASL code to OS
+Token	=12	// Do NOT change this line
+Offset	=08
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Under I2C 0 Bus
+         [02]Under I2C 1 Bus
+         [03]Under I2C 2 Bus
+         [04]Under I2C 3 Bus
+
+Setup Question	= Nfc Support
+Help String	= Enable/Disable exposing of _HID(BCM2F25) in ACPI ASL code to OS
+Token	=13	// Do NOT change this line
+Offset	=09
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Under I2C 0 Bus
+         [02]Under I2C 1 Bus
+         [03]Under I2C 2 Bus
+         [04]Under I2C 3 Bus
+
+Setup Question	= ALS Support
+Help String	= Enable/Disable exposing of _HID(CPLM3218) in ACPI ASL code to OS
+Token	=14	// Do NOT change this line
+Offset	=0A
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Under I2C 0 Bus
+         [02]Under I2C 1 Bus
+         [03]Under I2C 2 Bus
+         [04]Under I2C 3 Bus
+
+Setup Question	= HDMI over USB-C0
+Help String	= Force HDMI signals route over USB Type C port
+Token	=15	// Do NOT change this line
+Offset	=0B
+Width	=01
+Options	=*[00]Native USB Type-C	// Move "*" to the desired Option
+         [01]HDMI over USB Type-C
+
+Setup Question	= HDMI over USB-C1
+Help String	= Force HDMI signals route over USB Type C port
+Token	=16	// Do NOT change this line
+Offset	=0C
+Width	=01
+Options	=*[00]Native USB Type-C	// Move "*" to the desired Option
+         [01]HDMI over USB Type-C
+
+Setup Question	= HDD Power Enable
+Help String	= Enable or disable the power of HDD
+Token	=17	// Do NOT change this line
+Offset	=0D
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         *[01]Enabled 
+         [02]Manual by jumper
+
+Setup Question	= ODD Power Enable
+Help String	= Enable or disable the power of ODD
+Token	=7EE	// Do NOT change this line
+Offset	=0E
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         *[01]Enabled 
+
+Setup Question	= Zero-Power ODD
+Help String	= Enable/Disable Zero-Power ODD Feature
+Token	=18	// Do NOT change this line
+Offset	=0F
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled 
+
+Setup Question	= SSD Power Enable
+Help String	= Enable or disable the power of SSD
+Token	=7E9	// Do NOT change this line
+Offset	=10
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         *[01]SSD x2
+         [02]SSD x4
+
+Setup Question	= Serial Debug Message Under OS
+Help String	= Enable Serial Debug Message Under OS
+Token	=19	// Do NOT change this line
+Offset	=11
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled 
+
+Setup Question	= DT Hotplug Enable
+Help String	= Enable or Disable DT Hotplug, it uses EC DOCK_IN# pin as plug-in event.
+Token	=7DC	// Do NOT change this line
+Offset	=12
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled 
+
+Setup Question	= DT Hotplug Mode
+Help String	= Select DT Hotplug Mode - DxioHotplugEnhanced or DxioHotplugBasic
+Token	=1A	// Do NOT change this line
+Offset	=13
+Width	=01
+Options	=[00]Basic Mode	// Move "*" to the desired Option
+         *[01]Enhanced Mode
+
+Setup Question	= DT Slot Power Enable
+Help String	= Enable or disable the power of DT SLOT
+Token	=7DD	// Do NOT change this line
+Offset	=14
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled (x4)
+         [02]Enabled (x2) (Lane 0 + 1)
+         [03]Enabled (x1) (Lane 0)
+
+Setup Question	= WLAN/WIFI Power Enable
+Help String	= Enable or disable the power of WLAN/WIFI
+Token	=1B	// Do NOT change this line
+Offset	=15
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         *[01]Enabled 
+         [02]Manual
+
+Setup Question	= Wireless LAN Recovery
+Help String	= Wireless LAN Recovery suppport Enable/Disable
+Token	=1C	// Do NOT change this line
+Offset	=4B
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         *[01]Enabled 
+
+Setup Question	= LAN Power Enable
+Help String	= Enable or disable LAN Power
+Token	=1D	// Do NOT change this line
+Offset	=16
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled 
+         [02]Manual
+
+Setup Question	= LAN Low Power Mode
+Help String	= Enable or disable LAN Low Power Mode
+Token	=1E	// Do NOT change this line
+Offset	=3F
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled 
+
+Setup Question	= WWAN Power Enable
+Help String	= Enable or disable the power of WWAN
+Token	=1F	// Do NOT change this line
+Offset	=17
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         *[01]Enabled 
+         [02]Manual
+
+Setup Question	= Eval Auto Detection
+Help String	= Disable or enable EVAL card auto detection
+Token	=20	// Do NOT change this line
+Offset	=18
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled 
+
+Setup Question	= Camera 0 Enable
+Help String	= Enable or disable the power of REAR CAMERA
+Token	=21	// Do NOT change this line
+Offset	=19
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         *[01]Enabled 
+
+Setup Question	= Camera 1 Enable
+Help String	= Enable or disable the power of FRONT CAMERA
+Token	=22	// Do NOT change this line
+Offset	=1A
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         *[01]Enabled 
+
+Setup Question	= UCSI Support
+Help String	= Enable/Disable UCSI (USB Type-C Connector System Software Interface)
+Token	=23	// Do NOT change this line
+Offset	=1B
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled 
+
+Setup Question	= S3/Modern Standby Support
+Help String	= Switch S3/Modern Standby
+Token	=7F4	// Do NOT change this line
+Offset	=38
+Width	=01
+Options	=*[00]S3 Enable	// Move "*" to the desired Option
+         [01]Modern Standby Enable
+
+Setup Question	= Modern Standby Type
+Help String	= Select S0I2 or S0I3 type for Modern Standby.
+Token	=24	// Do NOT change this line
+Offset	=44
+Width	=01
+Options	=*[00]Modern Standby + S0i2	// Move "*" to the desired Option
+         [01]Modern Standby + S0i3
+         [02]Modern Standby + S0i2 + S0i3
+
+Setup Question	= SATA D3cold Enable
+Help String	= Enable/Disable SATA devies D3-COLD support.
+Token	=25	// Do NOT change this line
+Offset	=49
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled 
+
+Setup Question	= Reduce Hardware Support
+Help String	= Enable/Disable Reduce Hardware Support. Please disable PME wakeup, when Reduce Hardware enabled.
+Token	=7F3	// Do NOT change this line
+Offset	=3C
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled 
+
+Setup Question	= MS Resource
+Help String	= Auto: USB interrupt resource is controlled automatically; Enable: Enable USB current resource for MS; Disable: Disable USB current resource for MS.
+Token	=26	// Do NOT change this line
+Offset	=4C
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         *[01]Enabled 
+         [03]Auto
+
+Setup Question	= Wake on PME
+Help String	= Determines the action taken when the system power is off and a PCI Power Management Enable wake up event occurs.
+Token	=27	// Do NOT change this line
+Offset	=45
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled 
+
+Setup Question	= Sensor Fusion User Mode Driver
+Help String	= Enable/Disable Sensor Fusion User Mode Driver
+Token	=28	// Do NOT change this line
+Offset	=40
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled 
+
+Setup Question	= MITT/WITT Selection
+Help String	= MITT/WITT Selection
+Token	=29	// Do NOT change this line
+Offset	=1C
+Width	=01
+Options	=[00]MITT Only	// Move "*" to the desired Option
+         [01]WITT Only
+         *[02]Both disable
+
+Setup Question	= Unused GPP Clocks Off
+Help String	= Turn Unused GPP Clocks Off
+Token	=2A	// Do NOT change this line
+Offset	=1D
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         *[01]Enabled 
+
+Setup Question	= Clock PM: CLK_REQ0
+Help String	= Enable or disable CLK_REQ0# for M.2 WLAN Slot J3711
+Token	=2B	// Do NOT change this line
+Offset	=1E
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         *[01]Enabled 
+
+Setup Question	= Clock PM: CLK_REQ1
+Help String	= Enable or disable CLK_REQ1# for Onboard LAN U1301
+Token	=2C	// Do NOT change this line
+Offset	=1F
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         *[01]Enabled 
+
+Setup Question	= Clock PM: CLK_REQ2
+Help String	= Enable or disable CLK_REQ2# for M.2 WWAN Slot J3712
+Token	=2D	// Do NOT change this line
+Offset	=20
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         *[01]Enabled 
+
+Setup Question	= Clock PM: CLK_REQ3
+Help String	= Enable or disable CLK_REQ3# for M.2 WIFI Slot J3709
+Token	=2E	// Do NOT change this line
+Offset	=21
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         *[01]Enabled 
+
+Setup Question	= Clock PM: CLK_REQ4
+Help String	= Enable or disable CLK_REQ4# for DT x4 Slot J3606
+Token	=2F	// Do NOT change this line
+Offset	=22
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled 
+
+Setup Question	= Clock PM: CLK_REQ5
+Help String	= Enable or disable CLK_REQ5# for M.2 SSD Slot J3704
+Token	=30	// Do NOT change this line
+Offset	=23
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         *[01]Enabled 
+
+Setup Question	= Clock PM: CLK_REQ6
+Help String	= Enable or disable CLK_REQ6# for MXM x8 Slot J3604
+Token	=31	// Do NOT change this line
+Offset	=24
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled 
+
+Setup Question	= KBC Support
+Help String	= Enable/Disable KBC Support under OS
+Token	=32	// Do NOT change this line
+Offset	=25
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         *[01]Enabled 
+
+Setup Question	= AcDcSwitch
+Help String	= Enable/disable AcDcSwitch.
+Token	=33	// Do NOT change this line
+Offset	=26
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled 
+
+Setup Question	= AmdDcTimer
+Help String	= AmdDcTimer Setting.
+Token	=34	// Do NOT change this line
+Offset	=27
+Width	=01
+Value	=<0>
+
+Setup Question	= AmdAcTimer
+Help String	= AmdAcTimer Setting.
+Token	=35	// Do NOT change this line
+Offset	=28
+Width	=01
+Value	=<0>
+
+Setup Question	= SATA/ SATA express selection
+Help String	= SATA/ SATA express selection  Setting.
+Token	=36	// Do NOT change this line
+Offset	=29
+Width	=01
+Options	=*[00]SATA	// Move "*" to the desired Option
+         [01]SATA express
+
+Setup Question	= VDDP voltage
+Help String	= VDDP voltage  Setting.
+Token	=37	// Do NOT change this line
+Offset	=2A
+Width	=01
+Options	=*[00]VDDP voltage (0.9V)	// Move "*" to the desired Option
+         [01]VDDP voltage (+10mv)
+         [02]VDDP voltage (+20mv)
+         [03]VDDP voltage (+30mv)
+         [04]VDDP voltage (+40mv)
+         [05]VDDP voltage (+50mv)
+         [06]VDDP voltage (+60mv)
+         [07]VDDP voltage (+70mv)
+         [08]VDDP voltage (+80mv)
+         [09]VDDP voltage (+90mv)
+         [0A]VDDP voltage (+100mv)
+         [0B]VDDP voltage (-10mv)
+         [0C]VDDP voltage (-20mv)
+         [0D]VDDP voltage (-30mv)
+         [0E]VDDP voltage (-40mv)
+         [0F]VDDP voltage (-50mv)
+         [10]VDDP voltage (-60mv)
+         [11]VDDP voltage (-70mv)
+         [12]VDDP voltage (-80mv)
+         [13]VDDP voltage (-90mv)
+         [14]VDDP voltage (-100mv)
+
+Setup Question	= VDD18 voltage
+Help String	= VDD18 voltage  Setting.
+Token	=38	// Do NOT change this line
+Offset	=2B
+Width	=01
+Options	=*[00]VDD18 voltage (1.8V)	// Move "*" to the desired Option
+         [01]VDD18 voltage (ANPEC:+40mv/TI:+25mv)
+         [02]VDD18 voltage (ANPEC:+50mv/TI:+37.5mv)
+         [03]VDD18 voltage (ANPEC:+60mv/TI:+50mv)
+         [04]VDD18 voltage (ANPEC:+70mv/TI:+62.5mv)
+         [05]VDD18 voltage (ANPEC:+80mv/TI:+75mv)
+         [06]VDD18 voltage (ANPEC:+90mv/TI:+87.5mv)
+         [07]VDD18 voltage (ANPEC:+100mv/TI:+100mv)
+         [08]VDD18 voltage (ANPEC:+110mv/TI:+112.5mv)
+         [09]VDD18 voltage (ANPEC:+120mv/TI:+125mv)
+         [0A]VDD18 voltage (ANPEC:+130mv/TI:+137.5mv)
+         [0B]VDD18 voltage (ANPEC:-40mv/TI:-25mv)
+         [0C]VDD18 voltage (ANPEC:-50mv/TI:-37.5mv)
+         [0D]VDD18 voltage (ANPEC:-60mv/TI:-50mv)
+         [0E]VDD18 voltage (ANPEC:-70mv/TI:-62.5mv)
+         [0F]VDD18 voltage (ANPEC:-80mv/TI:-75mv)
+         [10]VDD18 voltage (ANPEC:-90mv/TI:-87.5mv)
+         [11]VDD18 voltage (ANPEC:-100mv/TI:-100mv)
+         [12]VDD18 voltage (ANPEC:-110mv/TI:-112.5mv)
+         [13]VDD18 voltage (ANPEC:-120mv/TI:-125mv)
+         [14]VDD18 voltage (ANPEC:-130mv/TI:-137.5mv)
+
+Setup Question	= 5V_S5 voltage.
+Help String	= 5V_S5 voltage setting for ANPEC PSA
+Token	=39	// Do NOT change this line
+Offset	=4A
+Width	=01
+Options	=*[00]5v_ALW(default)	// Move "*" to the desired Option
+         [01]5v_ALW +60mv
+         [02]5v_ALW +100mv
+
+Setup Question	= AMD KVM Mouse Protocol
+Help String	= Swtich KVM Mouse Protocol between Absolut/Simple
+Token	=3A	// Do NOT change this line
+Offset	=35
+Width	=01
+Options	=[00]Absolute	// Move "*" to the desired Option
+         [01]Simple
+         *[03]Auto
+
+Setup Question	= AMD DPTC interface
+Help String	= Dynamic Power and Thermal Control Interface Enable/Disable
+Token	=3B	// Do NOT change this line
+Offset	=2C
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled 
+
+Setup Question	= BLINK LED
+Help String	= Enable/Disable BLINK LED to identify S3/S4 state
+Token	=3C	// Do NOT change this line
+Offset	=36
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         *[01]Enabled 
+         [02]GPIO 11 Output Low
+         [03]GPIO 11 Output High
+
+Setup Question	= iLA TraceMemoryEn
+Help String	= Reserved 1M bytes MMIO space on 1M boundary when iLA TraceMemoryEn enabled
+Token	=3D	// Do NOT change this line
+Offset	=46
+Width	=01
+Options	=*[00]Disabled	// Move "*" to the desired Option
+         [01]Enabled 
+
+Setup Question	= RT3663 VRM PSI0 Workaround
+Help String	= For NRT3663 VRM only. Enable PSI0 Workaround To Save Power.
+Token	=3E	// Do NOT change this line
+Offset	=47
+Width	=01
+Options	=[00]Disabled	// Move "*" to the desired Option
+         *[01]Enabled 
+
+Setup Question	= System Language
+Help String	= Choose the system default language
+Token	=0C	// Do NOT change this line
+Offset	=00
+Width	=02
+Options	=*[00]en-US
+
+Setup Question	= Setup Prompt Timeout
+Help String	= Number of seconds to wait for setup activation key. 65535(0xFFFF) means indefinite waiting.
+Token	=127	// Do NOT change this line
+Offset	=00
+Width	=02
+Value	=<2>

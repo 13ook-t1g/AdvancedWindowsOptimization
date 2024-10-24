@@ -1,0 +1,5 @@
+Nvidia
+Stock -> OC
+
+AMD
+RX480 -> RX580

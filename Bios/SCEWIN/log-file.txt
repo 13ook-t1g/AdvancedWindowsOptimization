@@ -1,0 +1,9 @@
+
+------------------------------------------------------------------------------
+|                       AMISCE Utility. Ver 5.05.01.0002                     |
+|               Copyright (c) 2021 AMI. All rights reserved.                 |
+------------------------------------------------------------------------------
+
+Warning: Power cycle reset required for some of the updated controls.
+
+Script file imported successfully.
