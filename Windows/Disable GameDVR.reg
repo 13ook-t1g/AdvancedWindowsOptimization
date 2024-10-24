@@ -1,0 +1,14 @@
+Windows Registry Editor Version 5.00
+
+[HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\GameDVR]
+"AppCaptureEnabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Power]
+"ActivationType"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
+"DpiMapIommuContiguous"=dword:1
+
+[HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Reliability]
+"TimeStampInterval"=dword:0
+

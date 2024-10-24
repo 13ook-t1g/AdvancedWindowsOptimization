@@ -1,0 +1,3 @@
+windows use 20-25% of ram
+you can increase to 50% or less
+it depend on games & pc
