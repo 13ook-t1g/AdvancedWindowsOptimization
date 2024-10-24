@@ -1,0 +1,3 @@
+iopagelocklimit total*1024*128
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management
