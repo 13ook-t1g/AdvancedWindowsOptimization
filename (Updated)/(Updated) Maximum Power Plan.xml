@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <subgroup guid="fea3413e-7e05-4911-9a71-700331f1c294">
     <setting guid="0e796bdb-100d-47d6-a2d5-f7d2daa51f51" name="Require a password on wakeup">
@@ -255,7 +255,7 @@
     </setting>
     <setting guid="498c044a-201b-4631-a522-5c744ed4e678" name="Setting IOC on all TDs">
       <acindex scheme="381b4222-f694-41f0-9685-ff5bb260df2e" value="1" />
-      <acindex scheme="8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c" value="1" />
+      <acindex scheme="8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c" value="0" />
       <acindex scheme="a1841308-3541-4fab-bc81-f71556f20b4a" value="0" />
       <dcindex scheme="381b4222-f694-41f0-9685-ff5bb260df2e" value="0" />
       <dcindex scheme="8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c" value="1" />
@@ -323,7 +323,7 @@
     </setting>
     <setting guid="d6ba4903-386f-4c2c-8adb-5c21b3328d25" name="Unparked time trigger">
       <acindex scheme="381b4222-f694-41f0-9685-ff5bb260df2e" value="100" />
-      <acindex scheme="8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c" value="10000" />
+      <acindex scheme="8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c" value="0" />
       <acindex scheme="a1841308-3541-4fab-bc81-f71556f20b4a" value="100" />
       <dcindex scheme="381b4222-f694-41f0-9685-ff5bb260df2e" value="100" />
       <dcindex scheme="8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c" value="100" />
@@ -1069,10 +1069,10 @@
     </setting>
     <setting guid="aded5e82-b909-4619-9949-f5d71dac0bcb" name="Display brightness">
       <acindex scheme="381b4222-f694-41f0-9685-ff5bb260df2e" value="100" />
-      <acindex scheme="8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c" value="100" />
+      <acindex scheme="8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c" value="80" />
       <acindex scheme="a1841308-3541-4fab-bc81-f71556f20b4a" value="100" />
       <dcindex scheme="381b4222-f694-41f0-9685-ff5bb260df2e" value="100" />
-      <dcindex scheme="8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c" value="100" />
+      <dcindex scheme="8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c" value="80" />
       <dcindex scheme="a1841308-3541-4fab-bc81-f71556f20b4a" value="100" />
     </setting>
     <setting guid="f1fbfde2-a960-4165-9f88-50667911ce96" name="Dimmed display brightness">
