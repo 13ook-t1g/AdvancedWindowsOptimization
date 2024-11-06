@@ -12,6 +12,7 @@ if '%choice%'=='2' goto :RestoreBasic
 goto :start
 
 :start1
+cls
 echo Tcp Optimizer
 netsh int tcp set global autotuninglevel=Disabled
 netsh int tcp set heuristics disabled
@@ -30,12 +31,14 @@ if '%choice%'=='2' goto :W11
 goto :congestionprovider
 
 :W10
+cls
 netsh int tcp set supplemental Internet congestionprovider=ctcp
 powershell Set-NetTCPSetting -SettingName InternetCustom -CongestionProvider CTCP
 cls
 goto :RSS
 
 :W11
+cls
 netsh int tcp set supplemental Template=Compat CongestionProvider=bbr2
 netsh int tcp set supplemental Template=Internet CongestionProvider=bbr2
 netsh int tcp set supplemental Template=Datacenter CongestionProvider=bbr2
@@ -212,6 +215,26 @@ if '%choice%'=='2' goto :basicnetwork
 cls
 
 :NetworkShellTweak
+cls
+netsh interface ip set interface ethernet metric=1
+netsh interface ip set interface ethernet siteprefixlength=12
+netsh interface ip set interface ethernet ignoredefaultroutes=disabled
+netsh interface ip set interface ethernet forwarding=disabled
+netsh interface ip set interface ethernet firewall=disabled
+netsh interface ip set interface ethernet retransmittime= 0
+netsh interface ip set interface ethernet basereachabletime=1
+netsh interface ip set interface ethernet routerdiscovery=dhcp
+netsh interface ip set interface ethernet managedaddress=enabled
+netsh interface ip set interface ethernet otherstateful=disabled
+netsh interface ip set interface ethernet weakhostsend=enabled
+netsh interface ip set interface ethernet weakhostreceive=enabled
+netsh interface ip set interface ethernet advertisedrouterlifetime=3
+netsh interface ip set interface ethernet advertisedefaultroute=enabled
+netsh interface ip set interface ethernet currenthoplimit=64
+netsh interface ip set interface ethernet forcearpndwolpattern=disabled
+netsh interface ip set interface ethernet enabledirectedmacwolpattern=disabled
+netsh interface ip set interface ethernet ecncapability=ect1
+netsh interface ip set interface ethernet store=persistent
 netsh interface ip set interface wi-fi metric=1
 netsh interface ip set interface wi-fi siteprefixlength=12
 netsh interface ip set interface wi-fi ignoredefaultroutes=disabled
@@ -466,15 +489,19 @@ if '%choice%'=='2' goto :1464
 goto :MaximumUdpPacketSize
 
 :1472
+cls
 Reg add "HKLM\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters" /v "MaximumUdpPacketSize" /t REG_DWORD /d "1472" /f
 goto :customtcpip
 
 :1464
+cls
 Reg add "HKLM\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters" /v "MaximumUdpPacketSize" /t REG_DWORD /d "1464" /f
 goto :customtcpip
 
 :customtcpip
+cls
 echo Custom TCP/IP Optimization
+pause
 Reg.exe add "HKLM\SYSTEM\CurrentControlSet\services\LanmanServer\Parameters" /v "IRPStackSize" /t REG_DWORD /d "100" /f
 Reg.exe add "HKLM\SYSTEM\CurrentControlSet\services\LanmanServer\Parameters" /v "AutoShareWks" /t REG_DWORD /d "0" /f
 Reg.exe add "HKLM\SYSTEM\CurrentControlSet\services\LanmanServer\Parameters" /v "DisableCompression" /t REG_DWORD /d "1" /f
@@ -615,6 +642,14 @@ goto :finishedXD
 
 
 :finishedXD
+cls
+echo Protocol UDP Dynamic Port Range
+netsh int ipv4 show dynamicport udp
+pause
+netsh int ipv4 set dynamicport tcp start=1025 num=64511
+cls
+netsh int ipv4 show dynamicport udp
+pause
 cls
 Echo Router Optimization
 pause
