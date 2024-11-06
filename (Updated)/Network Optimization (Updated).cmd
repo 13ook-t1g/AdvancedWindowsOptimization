@@ -120,6 +120,7 @@ netsh int ipv4 show subinterface
 pause
 netsh int ipv4 set subinterface "Wi-Fi" mtu=1500 store=persistent
 netsh int ipv4 set subinterface "Ethernet" mtu=1500 store=persistent
+netsh interface ip set interface 1 mtu=1500
 for /f "tokens=3*" %%i in ('reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkCards" /f "ServiceName" /s ^|findstr /i /l "ServiceName"') do (
 reg add "HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\%%i" /v "TCPNoDelay" /t Reg_DWORD /d "1" /f
 reg add "HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\%%i" /v "TcpAckFrequency" /t Reg_DWORD /d "1" /f
@@ -139,6 +140,7 @@ netsh int ipv4 show subinterface
 pause
 netsh int ipv4 set subinterface "Wi-Fi" mtu=1492 store=persistent
 netsh int ipv4 set subinterface "Ethernet" mtu=1492 store=persistent
+netsh interface ip set interface 1 mtu=1492
 for /f "tokens=3*" %%i in ('reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkCards" /f "ServiceName" /s ^|findstr /i /l "ServiceName"') do (
 reg add "HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\%%i" /v "TCPNoDelay" /t Reg_DWORD /d "1" /f
 reg add "HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\%%i" /v "TcpAckFrequency" /t Reg_DWORD /d "1" /f
@@ -195,6 +197,61 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\ServiceProvider" /v "Local
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\ServiceProvider" /v "HostsPriority" /t REG_DWORD /d "1" /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\ServiceProvider" /v "DnsPriority" /t REG_DWORD /d "1" /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\ServiceProvider" /v "NetbtPriority" /t REG_DWORD /d "1" /f
+goto NetworkShellUpdated
+
+:NetworkShellUpdated
+cls
+echo Network Shell (Update)
+echo Continue = 1
+echo Skip = 2
+set choice=
+set /p choice=
+if not '%choice%'=='' set choice=%choice:~0,1%
+if '%choice%'=='1' goto :NetworkShellTweak
+if '%choice%'=='2' goto :basicnetwork
+cls
+
+:NetworkShellTweak
+netsh interface ip set interface wi-fi metric=1
+netsh interface ip set interface wi-fi siteprefixlength=12
+netsh interface ip set interface wi-fi ignoredefaultroutes=disabled
+netsh interface ip set interface wi-fi forwarding=disabled
+netsh interface ip set interface wi-fi firewall=disabled
+netsh interface ip set interface wi-fi retransmittime= 0
+netsh interface ip set interface wi-fi basereachabletime=1
+netsh interface ip set interface wi-fi routerdiscovery=dhcp
+netsh interface ip set interface wi-fi managedaddress=enabled
+netsh interface ip set interface wi-fi otherstateful=disabled
+netsh interface ip set interface wi-fi weakhostsend=enabled
+netsh interface ip set interface wi-fi weakhostreceive=enabled
+netsh interface ip set interface wi-fi advertisedrouterlifetime=3
+netsh interface ip set interface wi-fi advertisedefaultroute=enabled
+netsh interface ip set interface wi-fi currenthoplimit=64
+netsh interface ip set interface wi-fi forcearpndwolpattern=disabled
+netsh interface ip set interface wi-fi enabledirectedmacwolpattern=disabled
+netsh interface ip set interface wi-fi ecncapability=ect1
+netsh interface ip set interface wi-fi store=persistent
+netsh interface ip set interface 1 metric=1
+netsh interface ip set interface 1 siteprefixlength=12
+netsh interface ip set interface 1 ignoredefaultroutes=disabled
+netsh interface ip set interface 1 forwarding=disabled
+netsh interface ip set interface 1 firewall=disabled
+netsh interface ip set interface 1 retransmittime= 0
+netsh interface ip set interface 1 basereachabletime=1
+netsh interface ip set interface 1 routerdiscovery=dhcp
+netsh interface ip set interface 1 managedaddress=enabled
+netsh interface ip set interface 1 otherstateful=disabled
+netsh interface ip set interface 1 weakhostsend=enabled
+netsh interface ip set interface 1 weakhostreceive=enabled
+netsh interface ip set interface 1 advertisedrouterlifetime=3
+netsh interface ip set interface 1 advertisedefaultroute=enabled
+netsh interface ip set interface 1 currenthoplimit=64
+netsh interface ip set interface 1 forcearpndwolpattern=disabled
+netsh interface ip set interface 1 enabledirectedmacwolpattern=disabled
+netsh interface ip set interface 1 ecncapability=ect1
+netsh interface ip set interface 1 store=persistent
+goto :basicnetwork
+
 :basicnetwork
 cls
 echo Completed Basic Network Optimization
@@ -607,10 +664,10 @@ Reg.exe delete "HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters" /v "Sac
 Reg.exe delete "HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters" /v "Tcp1323Opts" /f
 Reg.exe delete "HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters" /v "TcpMaxDupAcks" /f
 
-reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_MAXCONNECTIONSPERSERVER"  /v "explorer.exe" /t REG_DWORD /d "4" /f
-reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_MAXCONNECTIONSPER1_0SERVER"  /v "explorer.exe" /t REG_DWORD /d "2" /f
-Reg.exe add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v "MaxConnectionsPerServer" /t REG_DWORD /d "4" /f
-Reg.exe add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v "MaxConnectionsPer1_0Server" /t REG_DWORD /d "2" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_MAXCONNECTIONSPERSERVER"  /v "explorer.exe" /t REG_DWORD /d "2" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_MAXCONNECTIONSPER1_0SERVER"  /v "explorer.exe" /t REG_DWORD /d "4" /f
+Reg.exe add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v "MaxConnectionsPerServer" /t REG_DWORD /d "2" /f
+Reg.exe add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v "MaxConnectionsPer1_0Server" /t REG_DWORD /d "4" /f
 
 for /f "tokens=3*" %%i in ('reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkCards" /f "ServiceName" /s ^|findstr /i /l "ServiceName"') do (
 	Reg.exe delete "HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\%%i" /v "TCPNoDelay" /f
